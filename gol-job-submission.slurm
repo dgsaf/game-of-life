@@ -36,8 +36,8 @@ rule_type-${rule_type}.\
 nghbr_type-${neighbour_type}.\
 bndry_type-${boundary_type}"
 
-log_filename="output/${base_name}.log"
-stats_filename="output/${base_name}.stats.txt"
+log_filename="${base_name}.log"
+stats_filename="${base_name}.stats.txt"
 
 # load appropriate modules
 module load gcc/8.3.0
@@ -56,7 +56,7 @@ ${visualisation_type} \
 ${rule_type} \
 ${neighbour_type} \
 ${boundary_type} \
-\"${stats_filename}\""
+\"${GOL-stats.txt}\""
 
 echo "GOL SLURM JOB SUBMISSION"
 echo "version_name: ${version_name}"
@@ -67,4 +67,10 @@ echo "exe: ${exe}"
 echo "args: ${args}"
 echo ""
 
-srun -n 1 -c ${OMP_NUM_THREADS} ${exe} ${args}
+srun -n 1 -c ${n_omp} ${exe} ${args} > GOL.log
+
+# move stats and log file, create output/ directory if it doesn't exist
+[! -d "output"] && mkdir output
+
+mv GOL-stats.txt output/${stats_filename}
+mv GOL.log output/${log_filename}
