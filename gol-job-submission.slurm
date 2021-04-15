@@ -19,7 +19,7 @@ grid_height=100
 grid_width=100
 num_steps=5
 initial_conditions_type=0
-visualisation_type=3
+visualisation_type=0
 rule_type=0
 neighbour_type=0
 boundary_type=0
@@ -65,7 +65,6 @@ echo "log_filename: ${log_filename}"
 echo "stats_filename: ${stats_filename}"
 echo "exe: ${exe}"
 echo "args: ${args}"
-echo ""
 
 srun -n 1 -c ${n_omp} ${exe} ${args} > GOL.log
 
