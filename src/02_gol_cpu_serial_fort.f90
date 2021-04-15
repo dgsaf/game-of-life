@@ -183,7 +183,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   integer :: i, j, state
   integer*8 :: ntot
   integer, dimension(NUMSTATES) :: num_in_state
-  real*4, dimension(NUMSTATES) :: frac
+  real, dimension(NUMSTATES) :: frac
   character(len=30) :: fmt
 
   fmt = "(A15,I1,A3,F10.4,A4)"

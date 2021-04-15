@@ -11,7 +11,7 @@
 #SBATCH --cpus-per-task=4
 
 # parameters
-version_name="01_gol_cpu_serial_fort"
+version_name="02_gol_cpu_serial_fort"
 
 n_omp=2
 
