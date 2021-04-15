@@ -56,7 +56,7 @@ ${visualisation_type} \
 ${rule_type} \
 ${neighbour_type} \
 ${boundary_type} \
-\"${GOL-stats.txt}\""
+GOL-stats.txt"
 
 echo "GOL SLURM JOB SUBMISSION"
 echo "version_name: ${version_name}"
