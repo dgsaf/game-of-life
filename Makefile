@@ -222,7 +222,7 @@ clean :
 # just make an easier make name to remember
 cpu_serial : cpu_serial_cc cpu_serial_fort
 cpu_serial_cc : bin/01_gol_cpu_serial
-cpu_serial_fort : bin/01_gol_cpu_serial_fort
+cpu_serial_fort : bin/01_gol_cpu_serial_fort bin/02_gol_cpu_serial_fort
 cpu_serial_expanded : cpu_serial_expanded_cc
 cpu_serial_expanded_cc : bin/01_gol_cpu_serial_expanded
 cpu_openmp : cpu_openmp_loop cpu_openmp_task
