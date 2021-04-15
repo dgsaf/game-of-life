@@ -70,7 +70,10 @@ echo ""
 srun -n 1 -c ${n_omp} ${exe} ${args} > GOL.log
 
 # move stats and log file, create output/ directory if it doesn't exist
-[! -d "output"] && mkdir output
+if [ ! -d "output"]
+then
+    mkdir output
+fi
 
 mv GOL-stats.txt output/${stats_filename}
 mv GOL.log output/${log_filename}
