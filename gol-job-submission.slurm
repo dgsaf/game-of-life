@@ -1,5 +1,15 @@
 #!/bin/bash -l
 
+# SLURM details
+#SBATCH --account=courses0100
+#SBATCH --reservation=courses0100
+#SBATCH --job-name=GOL
+#SBATCH --time=00:10:00
+#SBATCH --export=NONE
+#SBATCH --nodes=1
+#SBATCH --tasks-per-node=1
+#SBATCH --cpus-per-task=4
+
 # parameters
 version_name="01_gol_cpu_serial_fort"
 
@@ -32,16 +42,6 @@ stats_filename="output/${base_name}.stats.txt"
 # load appropriate modules
 module load gcc/8.3.0
 
-# SLURM script details
-#SBATCH --account=courses0100
-#SBATCH --reservation=courses0100
-#SBATCH --job-name=${base_name}
-#SBATCH --time=00:10:00
-#SBATCH --export=NONE
-#SBATCH --nodes=1
-#SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=4
-
 # program execution
 export OMP_NUM_THREADS=${n_omp}
 
@@ -58,11 +58,13 @@ ${neighbour_type} \
 ${boundary_type} \
 \"${stats_filename}\""
 
-# srun -N -n 1 -c ${OMP_NUM_THREADS} ${exe} ${args}
-
+echo "GOL SLURM JOB SUBMISSION"
 echo "version_name: ${version_name}"
 echo "base_name: ${base_name}"
 echo "log_filename: ${log_filename}"
 echo "stats_filename: ${stats_filename}"
 echo "exe: ${exe}"
 echo "args: ${args}"
+echo ""
+
+srun -n 1 -c ${OMP_NUM_THREADS} ${exe} ${args}
