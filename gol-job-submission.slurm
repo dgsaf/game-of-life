@@ -70,8 +70,6 @@ echo "args: ${args}"
 srun -n 1 -c ${n_omp} ${exe} ${args} > GOL-log.txt
 
 # move stats and log file, create output/ directory if it doesn't exist
-#SBATCH --output="${output_dir}/job.out"
-
 mkdir -p ${output_dir}
 
 mv GOL-stats.txt ${stats_filename}
