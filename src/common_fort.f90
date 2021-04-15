@@ -145,7 +145,7 @@ contains
         implicit none
         type(Options), intent(inout) :: opt
         character(len=2000) :: cmd
-        character(len=32) :: arg
+        character(len=2000) :: arg
         character(len=2000) :: statsfilename
         integer :: count
         integer*8 :: nbytes
