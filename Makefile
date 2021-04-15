@@ -9,13 +9,13 @@ PROFILER ?= OFF
 
 # optmisation flags
 OPTFLAGS = -O$(OPTLEVEL)
-# profiling flags if desired 
+# profiling flags if desired
 ifeq ($(PROFILER), ON)
 	OPTFLAGS += -pg -g
 endif
 
 # formatting characters for info output
-NULL := 
+NULL :=
 TAB := $(NULL)  $(NULL)
 
 # lets define a bunch of compilers
@@ -27,17 +27,17 @@ CLANGCXX = clang++
 CLANGFORT = flang
 AOMP = aompcc
 AOMPCXX = aompcc
-CRAYCC = cc 
+CRAYCC = cc
 CRAYCXX = CC
-CRAYFORT = ftn 
-INTELCC = icc 
+CRAYFORT = ftn
+INTELCC = icc
 INTELCXX = icpc
 INTELFORT = ifort
 
 # C flags. Currently only really need to enforce c11 standard
 GCCCFLAGS = -std=c11
 
-# fortran flags 
+# fortran flags
 GCCFFLAGS = -cpp -ffixed-line-length-none -dM
 INTELFFLAGS = -cpp -extend-source -D_INTELFTN
 
@@ -57,7 +57,7 @@ MPICC = mpicc
 MPICXX = mpicxx
 MPIFORT = mpif90
 
-# openmp 
+# openmp
 GCCOMP_FLAGS = -fopenmp -DUSEOPENMP
 GCCOMPTARGET_FLAGS = -fopenmp -DUSEOPENMPTARGET
 INTELOMP_FLAGS = -qopenmp -DUSEOPENMP
@@ -81,7 +81,7 @@ CFLAGS = $(GCCCFLAGS)
 ifeq ($(COMPILERTYPE), CLANG)
 	CC = $(CLANG)
 	CXX = $(CLANGCXX)
-	FORT = $(CLANGFORT)        
+	FORT = $(CLANGFORT)
 endif
 ifeq ($(COMPILERTYPE), AOMP)
 	CC = $(AOMP)
@@ -130,20 +130,20 @@ endif
 COMMONFLAGS = $(OPTFLAGS) $(VISUALFLAGS)
 
 .PHONY : dirs allinfo configinfo buildinfo makecommands clean
-.PHONY : cpu_serial cpu_serial_cc cpu_serial_fort 
+.PHONY : cpu_serial cpu_serial_cc cpu_serial_fort
 .PHONY : cpu_serial_expanded cpu_serial_expanded_cc cpu_serial_expanded_fort
-.PHONY : cpu_openmp cpu_openmp_loop cpu_openmp_task 
-.PHONY : cpu_openmp_cc cpu_openmp_loop_cc cpu_openmp_task_cc 
+.PHONY : cpu_openmp cpu_openmp_loop cpu_openmp_task
+.PHONY : cpu_openmp_cc cpu_openmp_loop_cc cpu_openmp_task_cc
 .PHONY : cpu_openmp_fort cpu_openmp_loop_fort cpu_openmp_task_fort
 .PHONY : cpu_mpi cpu_mpi_cc cpu_mpi_fort
 .PHONY : gpu_openmp gpu_openacc hip_monogpu
 
-all : dirs buildinfo cpu_serial cpu_serial_expanded 
+all : dirs buildinfo cpu_serial cpu_serial_expanded
 
-allinfo : configinfo makecommands buildinfo 
+allinfo : configinfo makecommands buildinfo
 
 # have it spit out information about current configuration
-configinfo : 
+configinfo :
 	$(info )
 	$(info ========================================)
 	$(info Compiler options:)
@@ -220,7 +220,7 @@ clean :
 	rm bin/*
 
 # just make an easier make name to remember
-cpu_serial : cpu_serial_cc cpu_serial_fort 
+cpu_serial : cpu_serial_cc cpu_serial_fort
 cpu_serial_cc : bin/01_gol_cpu_serial
 cpu_serial_fort : bin/01_gol_cpu_serial_fort
 cpu_serial_expanded : cpu_serial_expanded_cc
@@ -233,15 +233,15 @@ cpu_openmp_task_cc : bin/02_gol_cpu_openmp_task
 cpu_openmp_loop_fort : bin/02_gol_cpu_openmp_loop_fort
 cpu_openmp_task_fort : bin/02_gol_cpu_openmp_task_fort
 cpu_openacc : bin/02_gol_cpu_openacc bin/02_gol_cpu_openacc_fort
-# gpu related 
+# gpu related
 gpu_openmp : bin/02_gol_gpu_openmp bin/02_gol_gpu_openmp_fort
-gpu_openacc : bin/02_gol_gpu_openacc bin/02_gol_gpu_openacc_fort 
-gpu_mono_hip : bin/02_gol_hip_monogpu 
+gpu_openacc : bin/02_gol_gpu_openacc bin/02_gol_gpu_openacc_fort
+gpu_mono_hip : bin/02_gol_hip_monogpu
 
 obj/common.o : src/common.h src/common.c
 	$(CC) $(COMMONFLAGS) $(CFLAGS) -c src/common.c -o obj/common.o
 
-obj/common_fort.o : src/common_fort.f90 
+obj/common_fort.o : src/common_fort.f90
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/common_fort.f90 -o obj/common_fort.o
 
 bin/01_gol_cpu_serial : src/01_gol_cpu_serial.c obj/common.o
@@ -276,6 +276,10 @@ bin/01_gol_cpu_serial_fort : src/01_gol_cpu_serial_fort.f90 obj/common_fort.o
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/01_gol_cpu_serial_fort.f90 -o obj/01_gol_cpu_serial_fort.o
 	$(FORT) $(COMMONFLAGS) $(FFLAGS) -o bin/01_gol_cpu_serial_fort obj/01_gol_cpu_serial_fort.o obj/common_fort.o
 
+bin/02_gol_cpu_serial_fort : src/02_gol_cpu_serial_fort.f90 obj/common_fort.o
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -c src/02_gol_cpu_serial_fort.f90 -o obj/02_gol_cpu_serial_fort.o
+	$(FORT) $(COMMONFLAGS) $(FFLAGS) -o bin/02_gol_cpu_serial_fort obj/02_gol_cpu_serial_fort.o obj/common_fort.o
+
 bin/02_gol_cpu_openmp_loop_fort : src/02_gol_cpu_openmp_loop_fort.f90 obj/common_fort.o
 	$(OMPFORT) $(OMP_FLAGS) $(COMMONFLAGS) $(FFLAGS) -c src/02_gol_cpu_openmp_loop_fort.f90 -o obj/02_gol_cpu_openmp_loop_fort.o
 	$(OMPFORT) $(OMP_FLAGS) $(COMMONFLAGS) $(FFLAGS) -o bin/02_gol_cpu_openmp_loop_fort obj/02_gol_cpu_openmp_loop_fort.o obj/common_fort.o
@@ -283,4 +287,3 @@ bin/02_gol_cpu_openmp_loop_fort : src/02_gol_cpu_openmp_loop_fort.f90 obj/common
 bin/02_gol_cpu_openmp_task_fort : src/02_gol_cpu_openmp_task_fort.f90 obj/common_fort.o
 	$(OMPFORT) $(OMP_FLAGS) $(COMMONFLAGS) $(FFLAGS) -c src/02_gol_cpu_openmp_task_fort.f90 -o obj/02_gol_cpu_openmp_task_fort.o
 	$(OMPFORT) $(OMP_FLAGS) $(COMMONFLAGS) $(FFLAGS) -o bin/02_gol_cpu_openmp_task_fort obj/02_gol_cpu_openmp_task_fort.o obj/common_fort.o
-
