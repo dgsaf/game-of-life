@@ -36,8 +36,9 @@ rule_type-${rule_type}.\
 nghbr_type-${neighbour_type}.\
 bndry_type-${boundary_type}"
 
-log_filename="${base_name}.log"
-stats_filename="${base_name}.stats.txt"
+output_dir="output/${base_name}"
+log_filename="${output_dir}/log.txt"
+stats_filename="${output_dir}/stats.txt"
 
 # load appropriate modules
 module load gcc/8.3.0
@@ -66,10 +67,11 @@ echo "stats_filename: ${stats_filename}"
 echo "exe: ${exe}"
 echo "args: ${args}"
 
-srun -n 1 -c ${n_omp} ${exe} ${args} > GOL.log
+srun -n 1 -c ${n_omp} ${exe} ${args} \
+     --output="${output_dir}/job.out" > GOL-log.txt
 
 # move stats and log file, create output/ directory if it doesn't exist
-mkdir -p output
+mkdir -p ${output_dir}
 
-mv GOL-stats.txt output/${stats_filename}
-mv GOL.log output/${log_filename}
+mv GOL-stats.txt ${stats_filename}
+mv GOL-log.txt ${log_filename}
