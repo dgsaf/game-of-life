@@ -14,11 +14,10 @@
 !> This version of the program, 02_gol_CPU_serial_fort, is a serial code, which
 !> is only modified from the original code, 01_gol_cpu_serial_fort, in the
 !> following ways:
-!> - The traversal over neighbourhood indexes is adjusted to minimise
-!>   cache-misses.
+!> - Inner and outer loops over grid(i, j) have been swapped to ensure more
+!>   efficient array caching (noting that Fortran is column-major).
 !> - Cosmetic changes, such as adding white space, and including more detailed
 !>   comments.
-
 program GameOfLife
   use gol_common
   implicit none
@@ -119,9 +118,9 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
 
   ! Loop over current grid and determine next grid.
   ! Inner and outer loops have been swapped due to Fortran storing arrays in
-  ! column-major format.
-  do i = 1, n
-    do j = 1, m
+  ! column-major order.
+  do j = 1, m
+    do i = 1, n
       ! Count the number of neighbours, clockwise around the current cell.
       neighbours = 0;
 
@@ -191,9 +190,11 @@ subroutine game_of_life_stats(opt, step, current_grid)
   ntot = opt%n * opt%m
 
   ! Calculated the number of cells in each state across the entire grid.
+  ! Inner and outer loops have been swapped due to Fortran storing arrays in
+  ! column-major order.
   num_in_state = 0;
-  do i = 1, opt%n
-    do j = 1, opt%m
+  do j = 1, opt%m
+    do i = 1, opt%n
       state = current_grid(i,j)
       num_in_state(state) = num_in_state(state) + 1
     end do
