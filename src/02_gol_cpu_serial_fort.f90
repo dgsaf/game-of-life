@@ -118,10 +118,13 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
   integer, dimension(8) :: n_i, n_j
 
   ! Loop over current grid and determine next grid.
+  ! Inner and outer loops have been swapped due to Fortran storing arrays in
+  ! column-major format.
   do i = 1, n
     do j = 1, m
       ! Count the number of neighbours, clockwise around the current cell.
       neighbours = 0;
+
       n_i(1) = i - 1
       n_j(1) = j - 1
 
@@ -146,7 +149,8 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
       n_i(8) = i
       n_j(8) = j - 1
 
-      ! Loop over all neighbours and check their state.
+      ! Loop over all neighbours and check their state. The total number of live
+      ! neighbours is accumulated.
       do k = 1, 8
         if(n_i(k) .ge. 1 .and. n_j(k) .ge. 1 .and. &
             n_i(k) .le. n .and. n_j(k) .le. m) then
@@ -156,7 +160,7 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
         end if
       end do
 
-      ! Set the next grid.
+      ! Set the next grid, according to Conway's update rule.
       if(current_grid(i,j) .eq. CellState_ALIVE .and. &
           (neighbours .eq. 2 .or. neighbours .eq. 3)) then
         next_grid(i,j) = CellState_ALIVE
@@ -186,6 +190,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   fmt = "(A15,I1,A3,F10.4,A4)"
   ntot = opt%n * opt%m
 
+  ! Calculated the number of cells in each state across the entire grid.
   num_in_state = 0;
   do i = 1, opt%n
     do j = 1, opt%m
@@ -194,6 +199,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
     end do
   end do
 
+  ! Converted the state occupation from absolute terms to fractional terms.
   frac = num_in_state/real(ntot)
 
   if (step .eq. 0) then
