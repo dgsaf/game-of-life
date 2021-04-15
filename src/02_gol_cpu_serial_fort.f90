@@ -182,8 +182,8 @@ subroutine game_of_life_stats(opt, step, current_grid)
   integer, dimension(:,:), intent(in) :: current_grid
   integer :: i, j, state
   integer*8 :: ntot
-  integer, dimension(NUMSTATES) :: num_in_state
-  real*8, dimension(NUMSTATES) :: frac
+  integer, dimension(0:NUMSTATES-1) :: num_in_state
+  real*8, dimension(0:NUMSTATES-1) :: frac
   character(len=30) :: fmt
 
   fmt = "(A15,I1,A3,F10.4,A4)"
@@ -192,7 +192,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   ! Calculated the number of cells in each state across the entire grid.
   ! Inner and outer loops have been swapped due to Fortran storing arrays in
   ! column-major order.
-  num_in_state = 0;
+  num_in_state(:) = 0;
   do j = 1, opt%m
     do i = 1, opt%n
       state = current_grid(i,j)
@@ -215,7 +215,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
 
   write(10,*) "step ", step
 
-  do i = 1, NUMSTATES
+  do i = 0, NUMSTATES-1
     write(10,fmt, advance="no") "Frac in state ", i, " = ", frac(i), " "
   end do
 
