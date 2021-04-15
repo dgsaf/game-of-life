@@ -198,16 +198,12 @@ contains
         if (count .ge. 9) then
             call get_command_argument(9,arg)
             read(arg,*) statsfilename
-            !todo-delete
-            write(*,*) statsfilename
         end if
         if (opt%n .le. 0 .or. opt%m .le. 0) then
             write(*,*) "Invalid grid size."
             call exit(1)
         end if
         opt%statsfile = statsfilename
-        !todo-delete
-        write(*,*) opt%statsfile
         nbytes = sizeof(opt%n) * opt%n * opt%m
         memfootprint = real(nbytes)/1024.0/1024.0/1024.0
         write(*,*) "Requesting grid size of ", opt%n, opt%m
