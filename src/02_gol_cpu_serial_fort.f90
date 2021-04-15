@@ -183,7 +183,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   integer :: i, j, state
   integer*8 :: ntot
   integer, dimension(NUMSTATES) :: num_in_state
-  real, dimension(NUMSTATES) :: frac
+  real*8, dimension(NUMSTATES) :: frac
   character(len=30) :: fmt
 
   fmt = "(A15,I1,A3,F10.4,A4)"
@@ -201,7 +201,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   end do
 
   ! Converted the state occupation from absolute terms to fractional terms.
-  frac = num_in_state/real(ntot)
+  frac(:) = num_in_state(:)/real(ntot)
 
   if (step .eq. 0) then
     open(10, file=opt%statsfile, access="sequential")
