@@ -57,7 +57,7 @@ ${visualisation_type} \
 ${rule_type} \
 ${neighbour_type} \
 ${boundary_type} \
-GOL-stats.txt"
+\"${stats_filename}\""
 
 echo "GOL SLURM JOB SUBMISSION"
 echo "version_name: ${version_name}"
@@ -67,10 +67,9 @@ echo "stats_filename: ${stats_filename}"
 echo "exe: ${exe}"
 echo "args: ${args}"
 
-srun -n 1 -c ${n_omp} ${exe} ${args} > GOL-log.txt
-
 # move stats and log file, create output/ directory if it doesn't exist
 mkdir -p ${output_dir}
+touch ${stats_filename}
+touch ${log_filename}
 
-mv GOL-stats.txt ${stats_filename}
-mv GOL-log.txt ${log_filename}
+srun -n 1 -c ${n_omp} ${exe} ${args} > ${log_filename}
