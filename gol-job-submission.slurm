@@ -26,13 +26,13 @@ rule_type-${rule_type}.\
 nghbr_type-${neighbour_type}.\
 bndry_type-${boundary_type}"
 
-log_filename="${base_name}.log"
-stats_filename="${base_name}.stats.txt"
+log_filename="output/${base_name}.log"
+stats_filename="output/${base_name}.stats.txt"
 
 # load appropriate modules
 module load gcc/8.3.0
 
-#slurm script details
+# SLURM script details
 #SBATCH --account=courses0100
 #SBATCH --reservation=courses0100
 #SBATCH --job-name=${base_name}
