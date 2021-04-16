@@ -72,6 +72,7 @@ for version_name in ${version_names} ; do
     parameters[visualisation_type]=0
 
     parameter_string=$(kv_string parameters)
+    echo "submitting job --export=${parameter_string}"
     sbatch gol-job-submission.slurm --export=${parameter_string}
 done
 echo
@@ -95,6 +96,7 @@ for version_name in ${version_names} ; do
         parameters[grid_width]=${grid_length}
 
         parameter_string=$(kv_string parameters)
+        echo "submitting job --export=${parameter_string}"
         sbatch gol-job-submission.slurm --export=${parameter_string}
     done
 done
@@ -122,6 +124,7 @@ for version_name in ${version_names_parallel} ; do
         parameters[n_omp]=${n_omp}
 
         parameter_string=$(kv_string parameters)
+        echo "submitting job --export=${parameter_string}"
         sbatch gol-job-submission.slurm --export=${parameter_string}
     done
 done
