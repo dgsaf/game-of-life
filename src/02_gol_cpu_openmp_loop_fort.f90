@@ -11,16 +11,15 @@
 !>   - any dead cell with three live neighbours becomes a live cell,
 !>   - all other live cells die, and all other dead cells stay dead.
 !>
-!> This version of the program, 02_gol_cpu_serial_fort, is a serial code, which
-!> is only modified from the original code, 01_gol_cpu_serial_fort, in the
-!> following ways:
-!> - Inner and outer loops over grid(i, j) have been swapped to ensure more
-!>   efficient array caching (noting that Fortran is column-major).
-!> - Fixed error in game_of_life_stats() which was indexing states from
-!>   [1 .. numstates] rather than [0 .. numstates-1].
-!> - Cosmetic changes, such as adding white space, and including more detailed
-!>   comments.
+!> This version of the program, 02_gol_cpu_openmp_loop_fort, is a parallel code,
+!> modified from 02_gol_cpu_serial_fort, to utilise OMP loop parallelisation.
+!> The following loops have been parallelised
+!> - In game_of_life(..), over the (i, j) indexes as the updating of each cell's
+!>   state can be performed independently of any other state.
+!> - In game_of_life_stats(..), over the (i, j) indexes in calculating the
+!>   number of cells in a given state.
 program GameOfLife
+
   use gol_common
   implicit none
 
