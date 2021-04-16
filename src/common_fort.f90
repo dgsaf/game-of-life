@@ -1,3 +1,11 @@
+!> Conway's Game of Life - Common
+!>
+!> This module provides a common set of functionality which is used across all
+!> serial and parallel versions of the GOL code.
+!>
+!> The only modification to this module has been adjusting the length of the
+!> 'arg' variable in getinput() from 32 to 2000, to accommodate long statsfile
+!> filenames.
 module gol_common
 !---------------------------------------------------------------------
 !
