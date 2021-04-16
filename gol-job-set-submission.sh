@@ -28,9 +28,9 @@ function kv_string {
 
 # parameter sets
 version_names_serial="01_gol_cpu_serial_fort 02_gol_cpu_serial_fort"
-version_names_parallel="02_gol_cpu_openmp_task_fort 02_gol_cpu_openmp_loop_fort"
-# version_names="${version_names_serial} ${version_names_parallel}"
-version_names="${version_names_serial}"
+# version_names_parallel="02_gol_cpu_openmp_task_fort 02_gol_cpu_openmp_loop_fort"
+version_names_parallel="02_gol_cpu_openmp_loop_fort"
+version_names="${version_names_serial} ${version_names_parallel}"
 
 # grid_lengths="2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384"
 grid_lengths="2 4 8 16 32 64 128 256 512 1024"
@@ -41,7 +41,7 @@ n_omps="1 2 3 4 5 6 7 8 9 10 11 12"
 declare -A parameters
 
 parameters[version_name]=""
-parameters[n_omp]=1
+parameters[n_omp]=4
 parameters[grid_height]=1
 parameters[grid_width]=1
 parameters[num_steps]=1
