@@ -110,6 +110,7 @@ echo "versions: ${version_names_parallel}"
 echo "ngrid: 10x10"
 echo "nsteps: 10"
 echo "vis_type: 0 (ascii)"
+echo "n_omps: ${n_omps}"
 for version_name in ${version_names_parallel} ; do
     parameters[version_name]=${version_name}
     parameters[grid_height]=10
