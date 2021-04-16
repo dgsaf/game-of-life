@@ -59,17 +59,23 @@ ${neighbour_type} \
 ${boundary_type} \
 \"${stats_filename}\""
 
-echo "GOL SLURM JOB SUBMISSION"
-echo "version_name: ${version_name}"
+echo "GOL SLURM job submission"
+# echo "version_name: ${version_name}"
 echo "base_name: ${base_name}"
-echo "log_filename: ${log_filename}"
-echo "stats_filename: ${stats_filename}"
-echo "exe: ${exe}"
-echo "args: ${args}"
+# echo "log_filename: ${log_filename}"
+# echo "stats_filename: ${stats_filename}"
+# echo "exe: ${exe}"
+# echo "args: ${args}"
 
 # move stats and log file, create output/ directory if it doesn't exist
-mkdir -p ${output_dir}
-touch ${stats_filename}
-touch ${log_filename}
+if [ -d "${output_dir}" ]; then
+    echo "GOL calculation already performed for these parameters"
+else
+    echo "GOL calculation will commence"
 
-srun -n 1 -c ${n_omp} ${exe} ${args} > ${log_filename}
+    mkdir -p ${output_dir}
+    touch ${stats_filename}
+    touch ${log_filename}
+
+    srun -n 1 -c ${n_omp} ${exe} ${args} > ${log_filename}
+fi
