@@ -27,9 +27,14 @@ function kv_string {
 }
 
 # parameter sets
-version_names="01_gol_cpu_serial_fort 02_gol_cpu_serial_fort"
-# grid_sizes="2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384"
-grid_sizes="2 4 8 16 32 64 128 256 512 1024"
+version_names_serial="01_gol_cpu_serial_fort 02_gol_cpu_serial_fort"
+version_names_parallel="02_gol_cpu_openmp_task_fort 02_gol_cpu_openmp_loop_fort"
+# version_names="${version_names_serial} ${version_names_parallel}"
+version_names="${version_names_serial}"
+
+# grid_lengths="2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384"
+grid_lengths="2 4 8 16 32 64 128 256 512 1024"
+
 omp_threads="1 2 3 4 5 6 7 8 9 10 11 12"
 
 # parameter associative array with default values
@@ -69,6 +74,7 @@ for version_name in ${version_names} ; do
     parameter_string=$(kv_string parameters)
     sbatch gol-job-submission.slurm --export=${parameter_string}
 done
+echo
 
 # GOL scaling
 # Performing GOL simulations on increasing large grids, 2^n for n = 1, .., nmax,
@@ -76,7 +82,7 @@ done
 # behaviour of the different GOL versions.
 echo "GOL scaling jobs"
 echo "versions: ${version_names}"
-echo "grid_sizes: ${grid_sizes}"
+echo "grid lengths: ${grid_lengths}"
 echo "nsteps: 100"
 echo "vis_type: 0"
 for version_name in ${version_names} ; do
@@ -84,15 +90,15 @@ for version_name in ${version_names} ; do
     parameters[num_steps]=100
     parameters[visualisation_type]=0
 
-    for grid_size in ${grid_sizes}; do
-        parameters[grid_height]=${grid_size}
-        parameters[grid_width]=${grid_size}
+    for grid_length in ${grid_lengths}; do
+        parameters[grid_height]=${grid_length}
+        parameters[grid_width]=${grid_length}
 
         parameter_string=$(kv_string parameters)
         sbatch gol-job-submission.slurm --export=${parameter_string}
     done
 done
-
+echo
 
 
 

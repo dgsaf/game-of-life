@@ -11,18 +11,18 @@
 #SBATCH --cpus-per-task=4
 
 # parameters
-version_name="01_gol_cpu_serial_fort"
-
-n_omp=2
-
-grid_height=10
-grid_width=10
-num_steps=10
-initial_conditions_type=0
-visualisation_type=0
-rule_type=0
-neighbour_type=0
-boundary_type=0
+# Redundant when using gol-job-set-submission.sh to export parameter sets into
+# this script.
+# version_name="01_gol_cpu_serial_fort"
+# n_omp=2
+# grid_height=10
+# grid_width=10
+# num_steps=10
+# initial_conditions_type=0
+# visualisation_type=0
+# rule_type=0
+# neighbour_type=0
+# boundary_type=0
 
 # filenames
 base_name="\
