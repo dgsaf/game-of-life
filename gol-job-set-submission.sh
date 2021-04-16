@@ -32,10 +32,10 @@ version_names_serial="01_gol_cpu_serial_fort 02_gol_cpu_serial_fort"
 version_names_parallel="02_gol_cpu_openmp_loop_fort"
 version_names="${version_names_serial} ${version_names_parallel}"
 
-# grid_lengths="2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384"
-grid_lengths="2 4 8 16 32 64 128 256 512 1024"
+grid_lengths="2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384"
+# grid_lengths="10 100 1000 10000"
 
-n_omps="1 2 3 4 5 6 7 8 9 10 11 12"
+n_omps="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16"
 
 # parameter associative array with default values
 declare -A parameters
