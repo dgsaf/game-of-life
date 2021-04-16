@@ -1,0 +1,81 @@
+# 01_gol_cpu_serial_fort (1000x1000, 100 steps, no visualisation)
+# elapsed time: 4.906 s
+
+## code snippets
+ 75 > do i = 1, n
+ 76 >   do j = 1, m
+    >     ...
+ 96 >     ! loop over all neighbours and check there state
+ 97 >     do k = 1, 8
+ 98 >       if(n_i(k) .ge. 1 .and. n_j(k) .ge. 1 .and. n_i(k) .le. n .and. n_j(k) .le. m) then
+ 99 >         if (current_grid(n_i(k), n_j(k)) .eq. CellState_ALIVE) then
+100 >           neighbours = neighbours + 1
+101 >         end if
+102 >       end if
+103 >     end do
+    >     ...
+113 >   end do
+114 > end do
+
+133 > do i = 1, opt%n
+134 >   do j = 1, opt%m
+135 >     state = current_grid(i,j)
+136 >     num_in_state(state) = num_in_state(state) + 1
+137 >   end do
+138 > end do
+
+## profiling
+## gprof output
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls  Ts/call  Ts/call  name
+ 25.47      1.25     1.25                             game_of_life_ (01_gol_cpu_serial_fort.f90:100 @ 401588)
+ 18.31      2.14     0.90                             game_of_life_stats_ (01_gol_cpu_serial_fort.f90:134 @ 4016a8)
+ 18.31      3.04     0.90                             game_of_life_stats_ (01_gol_cpu_serial_fort.f90:136 @ 4016b8)
+ 15.14      3.78     0.74                             game_of_life_ (01_gol_cpu_serial_fort.f90:98 @ 4014bd)
+  4.50      4.00     0.22                             game_of_life_ (01_gol_cpu_serial_fort.f90:99 @ 401568)
+  4.09      4.20     0.20                             game_of_life_ (01_gol_cpu_serial_fort.f90:94 @ 4014ac)
+  2.97      4.34     0.15                             game_of_life_stats_ (01_gol_cpu_serial_fort.f90:136 @ 4016c1)
+  2.97      4.49     0.15                             game_of_life_stats_ (01_gol_cpu_serial_fort.f90:134 @ 4016c9)
+  ...
+
+# 02_gol_cpu_serial_fort (1000x1000, 100 steps, no visualisation)
+# elapsed time: 2.949 s
+
+## code snippets
+124 > do j = 1, m
+125 >   do i = 1, n
+    >     ...
+153 >     ! Loop over all neighbours and check their state. The total number of live
+154 >     ! neighbours is accumulated.
+155 >     do k = 1, 8
+156 >       if(n_i(k) .ge. 1 .and. n_j(k) .ge. 1 .and. &
+157 >           n_i(k) .le. n .and. n_j(k) .le. m) then
+158 >         if (current_grid(n_i(k), n_j(k)) .eq. CellState_ALIVE) then
+159 >           neighbours = neighbours + 1
+160 >         end if
+161 >       end if
+162 >     end do
+    >     ...
+173 >   end do
+174 > end do
+
+198 > do j = 1, opt%m
+199 >   do i = 1, opt%n
+200 >     state = current_grid(i,j)
+201 >     num_in_state(state) = num_in_state(state) + 1
+202 >   end do
+203 > end do
+
+## profiling
+## gprof output
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls  Ts/call  Ts/call  name
+ 32.05      0.95     0.95                             game_of_life_ (02_gol_cpu_serial_fort.f90:159 @ 401582)
+ 17.98      1.48     0.53                             game_of_life_ (02_gol_cpu_serial_fort.f90:157 @ 4014bc)
+ 15.26      1.93     0.45                             game_of_life_ (02_gol_cpu_serial_fort.f90:158 @ 401560)
+ 10.51      2.24     0.31                             game_of_life_ (02_gol_cpu_serial_fort.f90:151 @ 4014ab)
+  3.73      2.35     0.11                             game_of_life_stats_ (02_gol_cpu_serial_fort.f90:201 @ 4016c0)
+  3.39      2.45     0.10                             game_of_life_ (02_gol_cpu_serial_fort.f90:165 @ 4014e9)
+  3.39      2.55     0.10                             MAIN__ (02_gol_cpu_serial_fort.f90:89 @ 401c87)
+  2.37      2.62     0.07                             game_of_life_stats_ (02_gol_cpu_serial_fort.f90:199 @ 4016d1)
+  ...
