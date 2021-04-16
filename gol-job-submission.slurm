@@ -67,15 +67,18 @@ echo "base_name: ${base_name}"
 # echo "exe: ${exe}"
 # echo "args: ${args}"
 
-# move stats and log file, create output/ directory if it doesn't exist
+# check if the GOL simulation has already been performed for these parameters,
+# and if it hasn't, run the GOL simulation.
 if [ -d "${output_dir}" ]; then
-    echo "GOL calculation already performed for these parameters"
+    echo "GOL simulation already performed for these parameters"
 else
-    echo "GOL calculation will commence"
+    echo "GOL output directory will be created"
 
     mkdir -p ${output_dir}
     touch ${stats_filename}
     touch ${log_filename}
+
+    echo "GOL simulation will commence"
 
     srun -n 1 -c ${n_omp} ${exe} ${args} > ${log_filename}
 fi
