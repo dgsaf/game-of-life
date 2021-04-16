@@ -20,6 +20,7 @@
 !>   number of cells in a given state.
 program GameOfLife
 
+  use omp_lib
   use gol_common
   implicit none
 
@@ -120,6 +121,11 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
   ! Loop over current grid and determine next grid.
   ! Inner and outer loops have been swapped due to Fortran storing arrays in
   ! column-major order.
+  !$omp parallel do &
+  !$omp   schedule (static) &
+  !$omp   shared (n, m, current_grid, next_grid) &
+  !$omp   private (i, j, n_i, n_j, k, neighbours) &
+  !$omp   collapse(2)
   do j = 1, m
     do i = 1, n
       ! Count the number of neighbours, clockwise around the current cell.
@@ -171,6 +177,7 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
       end if
     end do
   end do
+  !$omp end parallel do
 end subroutine game_of_life
 
 !> GOL stats
