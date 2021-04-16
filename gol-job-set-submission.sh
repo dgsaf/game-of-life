@@ -35,13 +35,13 @@ version_names="${version_names_serial}"
 # grid_lengths="2 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384"
 grid_lengths="2 4 8 16 32 64 128 256 512 1024"
 
-omp_threads="1 2 3 4 5 6 7 8 9 10 11 12"
+n_omps="1 2 3 4 5 6 7 8 9 10 11 12"
 
 # parameter associative array with default values
 declare -A parameters
 
 parameters[version_name]=""
-parameters[n_omp]=4
+parameters[n_omp]=1
 parameters[grid_height]=1
 parameters[grid_width]=1
 parameters[num_steps]=1
@@ -55,21 +55,21 @@ parameters[boundary_type]=0
 echo "GOL SLURM job set submission"
 echo
 
-# GOL visualisation
+# GOL uniformity / ascii visualisation
 # Performing GOL simulations on a 10x10 grid, for 10 steps, with ascii
 # visualisation. Intended to verify that different GOL versions produce the same
 # behaviour.
-echo "GOL ascii visualisation jobs"
+echo "GOL ascii jobs"
 echo "versions: ${version_names}"
 echo "ngrid: 10x10"
 echo "nsteps: 10"
-echo "vis_type: 3"
+echo "vis_type: 0 (ascii)"
 for version_name in ${version_names} ; do
     parameters[version_name]=${version_name}
     parameters[grid_height]=10
     parameters[grid_width]=10
     parameters[num_steps]=10
-    parameters[visualisation_type]=3
+    parameters[visualisation_type]=0
 
     parameter_string=$(kv_string parameters)
     sbatch gol-job-submission.slurm --export=${parameter_string}
@@ -77,18 +77,18 @@ done
 echo
 
 # GOL scaling
-# Performing GOL simulations on increasing large grids, 2^n for n = 1, .., nmax,
-# for 100 steps, with no visualisation. Intended to determine the scaling
-# behaviour of the different GOL versions.
+# Performing GOL simulations on increasingly large grids, 2^n x 2^n for n = 1,
+# .., nmax, for 100 steps, with no visualisation. Intended to determine the
+# scaling behaviour of the different GOL versions.
 echo "GOL scaling jobs"
 echo "versions: ${version_names}"
 echo "grid lengths: ${grid_lengths}"
 echo "nsteps: 100"
-echo "vis_type: 0"
+echo "vis_type: 3 (none)"
 for version_name in ${version_names} ; do
     parameters[version_name]=${version_name}
     parameters[num_steps]=100
-    parameters[visualisation_type]=0
+    parameters[visualisation_type]=3
 
     for grid_length in ${grid_lengths}; do
         parameters[grid_height]=${grid_length}
@@ -100,21 +100,28 @@ for version_name in ${version_names} ; do
 done
 echo
 
+# GOL thread independence
+# Performing parallel GOL simulations with varying numbers of omp threads, on a
+# 10x10 grid, for 10 steps, with ascii visualisation. Intended to verify that
+# the parallel GOL versions produce the same behaviour independent of the number
+# of omp threads.
+echo "GOL thread independence jobs"
+echo "versions: ${version_names_parallel}"
+echo "grid lengths: 10x10"
+echo "nsteps: 10"
+echo "vis_type: 0 (ascii)"
+for version_name in ${version_names_parallel} ; do
+    parameters[version_name]=${version_name}
+    parameters[grid_height]=10
+    parameters[grid_width]=10
+    parameters[num_steps]=10
+    parameters[visualisation_type]=0
 
+    for n_omp in ${n_omps}; do
+        parameters[n_omp]=${n_omp}
 
-
-# # parameter list
-# parameter_list="\
-    # version_name=${version_name},\
-    # n_omp=${n_omp},\
-    # grid_height=${grid_height},\
-    # grid_width=${grid_width},\
-    # num_steps=${num_steps},\
-    # initial_conditions_type=${initial_conditions_type},\
-    # visualisation_type=${visualisation_type},\
-    # rule_type=${rule_type},\
-    # neighbour_type=${neighbour_type},\
-    # boundary_type=${boundary_type}"
-
-# # sbatch for
-# sbatch gol-job-submission.slurm --export=${parameter_list}
+        parameter_string=$(kv_string parameters)
+        sbatch gol-job-submission.slurm --export=${parameter_string}
+    done
+done
+echo
