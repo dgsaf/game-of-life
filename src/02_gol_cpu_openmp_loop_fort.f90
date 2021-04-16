@@ -121,11 +121,19 @@ subroutine game_of_life(opt, current_grid, next_grid, n, m)
   ! Loop over current grid and determine next grid.
   ! Inner and outer loops have been swapped due to Fortran storing arrays in
   ! column-major order.
+  !
+  ! OMP parallel do
+  ! - A static scheduler is chosen as the expected work per iteration should be
+  !   approximately constant. Thus load balancing is unlikely to be an issue,
+  !   while minimising overhead is of particular concern - making a static
+  !   scheduler the optimal choice.
+  ! - The nested loops are not collapsed as testing revealed that including a
+  !   'collapse(2)' clause leads to a ~10% slower execution time.
+  !
   !$omp parallel do &
   !$omp   schedule (static) &
   !$omp   shared (n, m, current_grid, next_grid) &
-  !$omp   private (i, j, n_i, n_j, k, neighbours) &
-  !$omp   collapse(2)
+  !$omp   private (i, j, n_i, n_j, k, neighbours)
   do j = 1, m
     do i = 1, n
       ! Count the number of neighbours, clockwise around the current cell.
@@ -197,16 +205,36 @@ subroutine game_of_life_stats(opt, step, current_grid)
   fmt = "(A15,I1,A3,F10.4,A4)"
   ntot = opt%n * opt%m
 
+  num_in_state(:) = 0;
+
   ! Calculated the number of cells in each state across the entire grid.
   ! Inner and outer loops have been swapped due to Fortran storing arrays in
   ! column-major order.
-  num_in_state(:) = 0;
+  !
+  ! OMP parallel do
+  ! - A static scheduler is chosen as the expected work per iteration should be
+  !   approximately constant. Thus load balancing is unlikely to be an issue,
+  !   while minimising overhead is of particular concern - making a static
+  !   scheduler the optimal choice.
+  ! - The nested loops are not collapsed as testing revealed that including a
+  !   'collapse(2)' clause leads to a ~10% slower execution time.
+  ! - A reduction clause is included for the num_in_state(:) variable as it can
+  !   be reduced across all iterations. Without this clause, the parallel do is
+  !   actually slower than the non-parallel do, however including it leads to
+  !   performance benefits.
+  !
+  !$omp parallel do &
+  !$omp   schedule (static) &
+  !$omp   shared (opt, current_grid) &
+  !$omp   private (i, j, state) &
+  !$omp   reduction(+:num_in_state)
   do j = 1, opt%m
     do i = 1, opt%n
       state = current_grid(i,j)
       num_in_state(state) = num_in_state(state) + 1
     end do
   end do
+  !$omp end parallel do
 
   ! Converted the state occupation from absolute terms to fractional terms.
   frac(:) = num_in_state(:)/real(ntot)
