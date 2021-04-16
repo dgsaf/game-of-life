@@ -107,7 +107,7 @@ echo
 # of omp threads.
 echo "GOL thread independence jobs"
 echo "versions: ${version_names_parallel}"
-echo "grid lengths: 10x10"
+echo "ngrid: 10x10"
 echo "nsteps: 10"
 echo "vis_type: 0 (ascii)"
 for version_name in ${version_names_parallel} ; do
