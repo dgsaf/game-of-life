@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  17 APR 2021 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  17 APR 2021 14:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1174,7 +1174,6 @@ File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
 exmf/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `draft' set `true' on input line 4393.
 Package hyperref Info: Hyper figures OFF on input line 4519.
 Package hyperref Info: Link nesting OFF on input line 4524.
 Package hyperref Info: Hyper index ON on input line 4527.
@@ -1289,44 +1288,52 @@ Package: listings 2018/09/02 1.7 (Carsten Heinz)
  (./phys4004_assignment_1_openmp.aux)
 \openout1 = `phys4004_assignment_1_openmp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-Package nag Info: pgf.sty is broken: disabling dollar check on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+Package nag Info: pgf.sty is broken: disabling dollar check on input line 54.
 Package nag Info: Command \frontmatter not defined, skipping amendment on input
- line 49.
+ line 54.
 Package nag Info: Command \mainmatter not defined, skipping amendment on input 
-line 49.
+line 54.
 Package nag Info: Command \backmatter not defined, skipping amendment on input 
-line 49.
+line 54.
 Package nag Info: Command \RaggedLeft not defined, skipping amendment on input 
-line 49.
+line 54.
 Package nag Info: Command \RaggedRight not defined, skipping amendment on input
- line 49.
+ line 54.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \microtypecontext on input line 49.
+LaTeX Info: Redefining \microtypecontext on input line 54.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
 
-
-Package microtype Warning: `draft' option active.
-(microtype)                Disabling all micro-typographic extensions.
-(microtype)                This might lead to different line and page breaks.
-
-
+(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1414,7 +1421,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.13).
 
 \AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring ON on input line 49.
+Package hyperref Info: Link coloring ON on input line 54.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/hyperref/nameref.sty
@@ -1426,9 +1433,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count353
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
 (./phys4004_assignment_1_openmp.out) (./phys4004_assignment_1_openmp.out)
 \@outlinefile=\write4
@@ -1436,56 +1443,97 @@ LaTeX Info: Redefining \nameref on input line 49.
 
 \c@lstlisting=\count354
 Package nag Info: Command \captionabove not defined, skipping amendment on inpu
-t line 49.
+t line 54.
 Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
-t line 49.
+t line 54.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
-line 49.
+line 54.
 Package nag Info: Command \topcaption not defined, skipping amendment on input 
-line 49.
-LaTeX Font Info:    Try loading font information for U+msa on input line 49.
+line 54.
+LaTeX Font Info:    Try loading font information for U+msa on input line 54.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 49.
+(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 58.
+(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmss' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ (./phys4004_assignment_1_openmp.toc)
+\tf@toc=\write5
+\openout5 = `phys4004_assignment_1_openmp.toc'.
+
+
+[1{/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
+/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 66.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
- [1{/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/shar
-e/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 66.
+ [2] [3]
+(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 186.
+ (../src/01_gol_cpu_serial_fort.f90)
+(../src/01_gol_cpu_serial_fort.f90
+Overfull \hbox (0.91408pt too wide) in paragraph at lines 151--152
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][] 
+ []
 
-]
+) [4] [5]
 No complaints by nag.
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 178.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 178.
+[6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
  (./phys4004_assignment_1_openmp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 178.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 178.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
 Package rerunfilecheck Info: File `phys4004_assignment_1_openmp.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 8DB150A0A52A6950FC9012B5771A9948;618.
+(rerunfilecheck)             Checksum: 4D8B8467EF3333D52FAFAEA39F9FBD27;832.
  ) 
 Here is how much of TeX's memory you used:
- 45863 strings out of 492616
- 1044808 string characters out of 6106108
- 1220840 words of memory out of 5000000
- 49151 multiletter control sequences out of 15000+600000
- 539413 words of font info for 51 fonts, out of 8000000 for 9000
+ 46378 strings out of 492616
+ 1052649 string characters out of 6106108
+ 1406666 words of memory out of 5000000
+ 49577 multiletter control sequences out of 15000+600000
+ 540974 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,105p,801b,1211s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,11n,105p,801b,1456s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></nix/store/l1iz05g9hz5h2nhnd
 68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfo
@@ -1500,11 +1548,12 @@ exmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/l1iz05g9hz5h2nhnd68a6
 cm/cmr7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-
 2018/share/texmf/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/l1iz05g9
 hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/pub
-lic/amsfonts/cm/cmtt10.pfb>
-Output written on phys4004_assignment_1_openmp.pdf (2 pages, 98935 bytes).
+lic/amsfonts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive
+-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on phys4004_assignment_1_openmp.pdf (6 pages, 127227 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 158 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
+ 28 named destinations out of 1000 (max. 500000)
+ 15477 words of extra memory for PDF output out of 17280 (max. 10000000)
 

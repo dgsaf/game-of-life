@@ -1,10 +1,13 @@
 \BOOKMARK [1][-]{section.1}{Overview}{}% 1
-\BOOKMARK [1][-]{section.2}{Serial Code}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Original Serial Code}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Improved Serial Code}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Profiling Comparison}{section.2}% 5
-\BOOKMARK [1][-]{section.3}{Loop Parallel Code}{}% 6
-\BOOKMARK [1][-]{section.4}{Results}{}% 7
-\BOOKMARK [2][-]{subsection.4.1}{Uniform Behaviour Verification}{section.4}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Scaling Behaviour}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{Thread Independence Verification}{section.4}% 10
+\BOOKMARK [1][-]{section.2}{Code Synopsis}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Bash Scripts}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Serial Code}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Original Serial Code}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Improved Serial Code}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Profiling Comparison}{subsection.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Parallel Loop Code}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Results}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Uniform Behaviour Verification}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Scaling Behaviour}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Thread Independence Verification}{section.3}% 12
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 13
