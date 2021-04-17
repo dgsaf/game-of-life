@@ -132,3 +132,35 @@ for version_name in ${version_names_parallel} ; do
     done
 done
 echo
+
+# GOL thread scaling
+# Performing parallel GOL simulations with varying numbers of omp threads, on
+# increasing large grids, 2^n x 2^n for n = 1, .., nmax, for 100 steps, with no
+# visualisation. Intended to determine the scaling behaviour of the parallel GOL
+# versions, with increasing number of omp threads, and with increasing grid
+# sizes.
+echo "GOL thread scaling jobs"
+echo "versions: ${version_names_parallel}"
+echo "grid lengths: ${grid_lengths}"
+echo "nsteps: 100"
+echo "vis_type: 3 (none)"
+echo "n_omps: ${n_omps}"
+for version_name in ${version_names_parallel} ; do
+    parameters[version_name]=${version_name}
+    parameters[num_steps]=100
+    parameters[visualisation_type]=3
+
+    for n_omp in ${n_omps}; do
+        parameters[n_omp]=${n_omp}
+
+        for grid_length in ${grid_lengths}; do
+            parameters[grid_height]=${grid_length}
+            parameters[grid_width]=${grid_length}
+
+            parameter_string=$(kv_string parameters)
+            # echo "--export=${parameter_string}"
+            sbatch --export=${parameter_string} gol-job-submission.slurm
+        done
+    done
+done
+echo
