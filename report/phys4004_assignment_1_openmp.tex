@@ -112,7 +112,7 @@ provided by Dr Pascal Elahi, with the following additions:
 \item \lstinline[style=ff]{gol-job-set-submission.sh}: a bash script which
   constructs different sets of parameters, and executes
   \lstinline[style=ff]{gol-job-submission.slurm} for each parameter set.
-  Three batches of jobs are submitted:
+  The batches of jobs submitted are:
   \begin{itemize}
   \item A verification batch, which submits a job for every version of the GOL
     simulation, on a $10\cross10$ grid, for 10 steps, with ASCII visualisation.
@@ -135,6 +135,18 @@ provided by Dr Pascal Elahi, with the following additions:
     produces uniform results, independent of the number of threads assigned to
     the program.
     The logging output and statistics are compared to verify this.
+
+  \item An OMP batch, which submits a job for every parallel version of the GOL
+    simulation, for a range of assigned threads,
+    $\mathrm{n_{omp}} = 1, \dotsc, 16$, and for a range of grid sizes,
+    $2^{n} \cross 2^{n}$ for $n = 1, \dotsc 14$ with no visualisation.
+    This is intended to collect data for analysing the scaling behaviour of each
+    parallel version, for each number of threads, with the total elapsed time
+    being compared.
+    Analysing this will yield some insight into the cost associated with the
+    overhead of OMP threading.
+    The total elapsed times are compared to investigate this.
+
   \end{itemize}
 
 \item \lstinline[style=ff]{output/}: a directory which includes subdirectories
@@ -218,6 +230,9 @@ language=Fortran
 
 \subsection{Thread Independence Verification}
 \label{sec:thre-indep-verif}
+
+\subsection{Thread Scaling Behaviour}
+\label{sec:thread-scaling-behaviour}
 
 \newpage
 \appendix

@@ -21,6 +21,7 @@
     "sec:unif-behav-verif"
     "sec:scaling-behaviour"
     "sec:thre-indep-verif"
+    "sec:thread-scaling-behaviour"
     "sec:appendix"
     "sec:common_fort"
     "sec:01_gol_cpu_serial_fort"
