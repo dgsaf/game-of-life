@@ -21,6 +21,12 @@
     "sec:unif-behav-verif"
     "sec:scaling-behaviour"
     "sec:thre-indep-verif"
-    "sec:appendix"))
+    "sec:appendix"
+    "sec:common_fort"
+    "sec:01_gol_cpu_serial_fort"
+    "sec:02_gol_cpu_serial_fort"
+    "sec:02_gol_cpu_openmp_loop_fort"
+    "sec:gol-job-submission"
+    "sec:gol-job-set-submission"))
  :latex)
 

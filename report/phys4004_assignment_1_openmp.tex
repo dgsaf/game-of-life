@@ -8,7 +8,7 @@
 \usepackage{listings}
 
 \lstset{
-  basicstyle=\ttfamily\small\color{black}
+  basicstyle=\ttfamily\footnotesize\color{black}
   , commentstyle=\color{blue}
   , keywordstyle=\color{purple}
   , stringstyle=\color{orange}
@@ -18,13 +18,14 @@
   , stepnumber=1
   , numberstyle=\ttfamily\small\color{black}
   %
+  , keepspaces=true
   , showspaces=false
   , showstringspaces=false
   , showtabs=false
   , tabsize=2
+  , breaklines=true
   %
   , frame=single
-  , keepspaces=true
   , backgroundcolor=\color{white}
   , rulecolor=\color{black}
   , captionpos=a
@@ -222,5 +223,52 @@ language=Fortran
 \appendix
 \section{Appendix}
 \label{sec:appendix}
+
+\subsection{src/common\_fort.f90}
+\label{sec:common_fort}
+
+\lstinputlisting[
+language=Fortran
+]{../src/common_fort.f90}
+
+\newpage
+\subsection{src/01\_gol\_cpu\_serial\_fort.f90}
+\label{sec:01_gol_cpu_serial_fort}
+
+\lstinputlisting[
+language=Fortran
+]{../src/01_gol_cpu_serial_fort.f90}
+
+\newpage
+\subsection{src/02\_gol\_cpu\_serial\_fort.f90}
+\label{sec:02_gol_cpu_serial_fort}
+
+\lstinputlisting[
+language=Fortran
+]{../src/02_gol_cpu_serial_fort.f90}
+
+\newpage
+\subsection{src/02\_gol\_cpu\_openmp\_loop\_fort.f90}
+\label{sec:02_gol_cpu_openmp_loop_fort}
+
+\lstinputlisting[
+language=Fortran
+]{../src/02_gol_cpu_openmp_loop_fort.f90}
+
+\newpage
+\subsection{gol-job-submission.slurm}
+\label{sec:gol-job-submission}
+
+\lstinputlisting[
+language=Bash
+]{../gol-job-submission.slurm}
+
+\newpage
+\subsection{gol-job-set-submission.sh}
+\label{sec:gol-job-set-submission}
+
+\lstinputlisting[
+language=Bash
+]{../gol-job-set-submission.sh}
 
 \end{document}
