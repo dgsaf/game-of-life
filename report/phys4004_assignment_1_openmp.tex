@@ -1,0 +1,185 @@
+\documentclass[draft]{article}
+
+% - Style
+\usepackage{base}
+
+% - Listings
+\usepackage{color}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\normalsize\color{orange}
+  , commentstyle=\color{blue}
+  , keywordstyle=\color{red}
+  , stringstyle=\color{purple}
+  %
+  , numbers=left
+  , numbersep=5pt
+  , numberstyle=\ttfamily\tiny\color{pink}
+  , stepnumber=1
+  %
+  , showspaces=false
+  , showstringspaces=false
+  , showtabs=false,
+  , tabsize=2
+  %
+  , frame=single
+  , keepspaces=true
+  , backgroundcolor=\color{white}
+  , rulecolor=\color{black}
+  , captionpos=b
+}
+
+% - Title
+\title{PHYS4004 High Performance Computing - Assignment 1: OpenMP}
+\author{Tom Ross - 1834 2884}
+\date{}
+
+% - Headers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\chead{}
+\lhead{\thetitle}
+\rfoot{\thepage}
+\cfoot{}
+\lfoot{}
+
+% - Document
+\begin{document}
+
+\section{Overview}
+\label{sec:Overview}
+
+The following items are included:
+\begin{itemize}
+\item The codebase \lstinline{game-of-life} consists of the original code
+  provided by Dr Pascal Elahi, with the following additions:
+  \begin{itemize}
+  \item \lstinline{src/02_gol_cpu_serial_fort.f90}: a serial GOL code which
+    derives from \\ \lstinline{src/01_gol_cpu_serial_fort.f90}, but improves
+    loop ordering to match the column-major format of Fortran.
+
+  \item \lstinline{src/02_gol_cpu_openmp_loop_fort.f90}: a parallel GOL code which
+    derives from \\ \lstinline{src/02_gol_cpu_serial_fort.f90}, but implements
+    OMP parallel do loops to yield performance benefits.
+
+  \item \lstinline{profiling/}: a directory which includes the profiling results
+    of the \\ \lstinline{01_gol_cpu_serial_fort} and
+    \lstinline{02_gol_cpu_serial_fort} versions of the GOL code, as well as a
+    brief summary and comparison of the profiling results.
+    The results were collected for a GOL simulation on a $1000\cross1000$ grid,
+    for 100 steps with no visualisation enabled.
+
+  \item \lstinline{gol-job-submission.slurm}: a bash script which submits a
+    \lstinline{sbatch} job request for a GOL simulation with a given set of
+    parameters which include:
+    \begin{itemize}
+    \item \lstinline{version_name}
+
+    \item \lstinline{n_omp}
+
+    \item \lstinline{grid_height}
+
+    \item \lstinline{grid_width}
+
+    \item \lstinline{num_steps}
+
+    \item \lstinline{intial_conditions_type}
+
+    \item \lstinline{visualisation_type}
+
+    \item \lstinline{rule_type}
+
+    \item \lstinline{neighbour_type}
+
+    \item \lstinline{boundary_type}
+    \end{itemize}
+    An output directory is created for the given set of parameters, with the
+    logging output and statistics of the GOL simulation confined there.
+    If the output directory already exists, the job isn't submitted to prevent
+    repeating work needlessly.
+
+  \item \lstinline{gol-job-set-submission.sh}: a bash script which constructs
+    different sets of parameters, and executes
+    \lstinline{gol-job-submission.slurm} for each parameter set.
+    Three batches of jobs are submitted:
+    \begin{itemize}
+    \item A verification batch, which submits a job for every version of the GOL
+      simulation, on a $10\cross10$ grid, for 10 steps, with ASCII
+      visualisation.
+      This is intended to allow for visual confirmation that each version
+      produces uniform results.
+      The logging output and statistics are compared to verify this.
+
+    \item A scaling batch, which submits a job for every version of the GOL
+      simulation, on a range of grid sizes, $2^{n}\cross2^{n}$ for
+      $n = 1, \dotsc, 14$, for 100 steps, with no visualisation.
+      This is intended to collect data for analysing the scaling behaviour of
+      each version with increasing grid size, with the total elapsed time being
+      compared.
+
+    \item An OMP batch, which submits a job for every parallel version of the
+      GOL simulation, for a range of assigned threads,
+      $\mathrm{n_{omp}} = 1, \dotsc, 16$, on a $10\cross10$ grid, for 10 steps,
+      with ASCII visualisation.
+      This is intended to allow for visual confirmation that each parallel
+      version produces uniform results, independent of the number of threads
+      assigned to the program.
+      The logging output and statistics are compared to verify this.
+    \end{itemize}
+
+  \item \lstinline{output/}: a directory which includes subdirectories (for each
+    parameter set submitted), each of which include the logging output and
+    statistics file; that is, \\
+    \lstinline{output/<unique_parameter_set>/log.txt} and \\
+    \lstinline{output/<unique_parameter_set>/stats.txt}.
+
+  \item \lstinline{report/}: a directory which includes this \lstinline{.tex}
+    file and other files suitable for submission of this assignment.
+  \end{itemize}
+
+  Additionally, some minor modifications have been made to the following files:
+
+  \begin{itemize}
+  \item \lstinline{Makefile}: the make rule \lstinline{make cpu_serial_fort} has
+    been modified to include \\ \lstinline{src/02_gol_cpu_serial_fort.f90}.
+
+  \item \lstinline{src/common_fort.f90}: the length of the variable
+    \lstinline[basicstyle=\ttfamily\color{blue}]{arg} has been increased from 32
+    to 2000 to allow for larger filenames for the variable
+    \lstinline[basicstyle=\ttfamily\color{blue}]{statsfile}.
+  \end{itemize}
+
+\item Instances of codebase are provided in both zip and tar.gz formats, and
+  can also be found at \url{https://github.com/dgsaf/game-of-life}.
+\end{itemize}
+
+\section{Serial Code}
+\label{sec:serial-code}
+
+\subsection{Original Serial Code}
+\label{sec:original-serial-code}
+
+\subsection{Improved Serial Code}
+\label{sec:improved-serial-code}
+
+\subsection{Profiling Comparison}
+\label{sec:profiling-comparison}
+
+\section{Loop Parallel Code}
+\label{sec:loop-parallel-code}
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Uniform Behaviour Verification}
+\label{sec:unif-behav-verif}
+
+\subsection{Scaling Behaviour}
+\label{sec:scaling-behaviour}
+
+\subsection{Thread Independence Verification}
+\label{sec:thre-indep-verif}
+
+\end{document}
