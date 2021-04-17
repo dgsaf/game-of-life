@@ -1,0 +1,135 @@
+ Requesting grid size of           10          10
+  which requires   3.72529030E-07  GB 
+          10          10          10
+ Game of Life
+ Step            0
+  ***  *** 
+ **  **    
+****** *** 
+**  * ***  
+ **** ** * 
+**    ***  
+*** **  *  
+*  **** ** 
+*  ******* 
+   ***** * 
+ Elapsed time is    1.9531250000000000E-002 s
+ Game of Life
+ Step            1
+ ********  
+*          
+         * 
+           
+   **    * 
+         * 
+  *        
+*          
+  *        
+   *     * 
+ Elapsed time is    1.1718750000000000E-002 s
+ Game of Life
+ Step            2
+ *******   
+ ********  
+           
+           
+           
+   *       
+           
+ *         
+           
+           
+ Elapsed time is    7.8125000000000000E-003 s
+ Game of Life
+ Step            3
+ *      *  
+ *      *  
+  ******   
+           
+           
+           
+           
+           
+           
+           
+ Elapsed time is    7.8125000000000000E-003 s
+ Game of Life
+ Step            4
+           
+ * **** *  
+  ******   
+   ****    
+           
+           
+           
+           
+           
+           
+ Elapsed time is    3.9062500000000000E-003 s
+ Game of Life
+ Step            5
+    **     
+           
+           
+  *    *   
+    **     
+           
+           
+           
+           
+           
+ Elapsed time is    7.8125000000000000E-003 s
+ Game of Life
+ Step            6
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+ Elapsed time is    7.8125000000000000E-003 s
+ Game of Life
+ Step            7
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+ Elapsed time is    3.9062500000000000E-003 s
+ Game of Life
+ Step            8
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+ Elapsed time is    7.8125000000000000E-003 s
+ Game of Life
+ Step            9
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+ Elapsed time is    3.9062500000000000E-003 s
+ Finished GOL
+ Elapsed time is    8.2031250000000000E-002 s

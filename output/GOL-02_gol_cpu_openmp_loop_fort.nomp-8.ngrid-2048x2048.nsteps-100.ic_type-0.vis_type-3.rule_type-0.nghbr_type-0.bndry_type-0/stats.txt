@@ -1,0 +1,200 @@
+ step            0
+ Frac in state 0 =     0.6003     Frac in state 1 =     0.3997     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            1
+ Frac in state 0 =     0.1488     Frac in state 1 =     0.8512     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            2
+ Frac in state 0 =     0.1313     Frac in state 1 =     0.8687     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            3
+ Frac in state 0 =     0.1269     Frac in state 1 =     0.8731     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            4
+ Frac in state 0 =     0.1235     Frac in state 1 =     0.8765     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            5
+ Frac in state 0 =     0.1215     Frac in state 1 =     0.8785     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            6
+ Frac in state 0 =     0.1199     Frac in state 1 =     0.8801     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            7
+ Frac in state 0 =     0.1187     Frac in state 1 =     0.8813     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            8
+ Frac in state 0 =     0.1180     Frac in state 1 =     0.8820     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step            9
+ Frac in state 0 =     0.1180     Frac in state 1 =     0.8820     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           10
+ Frac in state 0 =     0.1178     Frac in state 1 =     0.8822     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           11
+ Frac in state 0 =     0.1176     Frac in state 1 =     0.8824     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           12
+ Frac in state 0 =     0.1168     Frac in state 1 =     0.8832     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           13
+ Frac in state 0 =     0.1166     Frac in state 1 =     0.8834     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           14
+ Frac in state 0 =     0.1161     Frac in state 1 =     0.8839     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           15
+ Frac in state 0 =     0.1157     Frac in state 1 =     0.8843     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           16
+ Frac in state 0 =     0.1155     Frac in state 1 =     0.8845     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           17
+ Frac in state 0 =     0.1151     Frac in state 1 =     0.8849     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           18
+ Frac in state 0 =     0.1145     Frac in state 1 =     0.8855     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           19
+ Frac in state 0 =     0.1141     Frac in state 1 =     0.8859     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           20
+ Frac in state 0 =     0.1135     Frac in state 1 =     0.8865     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           21
+ Frac in state 0 =     0.1132     Frac in state 1 =     0.8868     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           22
+ Frac in state 0 =     0.1125     Frac in state 1 =     0.8875     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           23
+ Frac in state 0 =     0.1116     Frac in state 1 =     0.8884     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           24
+ Frac in state 0 =     0.1112     Frac in state 1 =     0.8888     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           25
+ Frac in state 0 =     0.1103     Frac in state 1 =     0.8897     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           26
+ Frac in state 0 =     0.1097     Frac in state 1 =     0.8903     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           27
+ Frac in state 0 =     0.1093     Frac in state 1 =     0.8907     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           28
+ Frac in state 0 =     0.1087     Frac in state 1 =     0.8913     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           29
+ Frac in state 0 =     0.1086     Frac in state 1 =     0.8914     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           30
+ Frac in state 0 =     0.1080     Frac in state 1 =     0.8920     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           31
+ Frac in state 0 =     0.1075     Frac in state 1 =     0.8925     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           32
+ Frac in state 0 =     0.1069     Frac in state 1 =     0.8931     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           33
+ Frac in state 0 =     0.1062     Frac in state 1 =     0.8938     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           34
+ Frac in state 0 =     0.1056     Frac in state 1 =     0.8944     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           35
+ Frac in state 0 =     0.1053     Frac in state 1 =     0.8947     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           36
+ Frac in state 0 =     0.1047     Frac in state 1 =     0.8953     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           37
+ Frac in state 0 =     0.1044     Frac in state 1 =     0.8956     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           38
+ Frac in state 0 =     0.1041     Frac in state 1 =     0.8959     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           39
+ Frac in state 0 =     0.1036     Frac in state 1 =     0.8964     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           40
+ Frac in state 0 =     0.1030     Frac in state 1 =     0.8970     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           41
+ Frac in state 0 =     0.1027     Frac in state 1 =     0.8973     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           42
+ Frac in state 0 =     0.1020     Frac in state 1 =     0.8980     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           43
+ Frac in state 0 =     0.1017     Frac in state 1 =     0.8983     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           44
+ Frac in state 0 =     0.1014     Frac in state 1 =     0.8986     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           45
+ Frac in state 0 =     0.1010     Frac in state 1 =     0.8990     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           46
+ Frac in state 0 =     0.1006     Frac in state 1 =     0.8994     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           47
+ Frac in state 0 =     0.1000     Frac in state 1 =     0.9000     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           48
+ Frac in state 0 =     0.0995     Frac in state 1 =     0.9005     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           49
+ Frac in state 0 =     0.0992     Frac in state 1 =     0.9008     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           50
+ Frac in state 0 =     0.0987     Frac in state 1 =     0.9013     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           51
+ Frac in state 0 =     0.0980     Frac in state 1 =     0.9020     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           52
+ Frac in state 0 =     0.0977     Frac in state 1 =     0.9023     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           53
+ Frac in state 0 =     0.0973     Frac in state 1 =     0.9027     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           54
+ Frac in state 0 =     0.0969     Frac in state 1 =     0.9031     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           55
+ Frac in state 0 =     0.0965     Frac in state 1 =     0.9035     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           56
+ Frac in state 0 =     0.0961     Frac in state 1 =     0.9039     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           57
+ Frac in state 0 =     0.0957     Frac in state 1 =     0.9043     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           58
+ Frac in state 0 =     0.0956     Frac in state 1 =     0.9044     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           59
+ Frac in state 0 =     0.0951     Frac in state 1 =     0.9049     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           60
+ Frac in state 0 =     0.0948     Frac in state 1 =     0.9052     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           61
+ Frac in state 0 =     0.0946     Frac in state 1 =     0.9054     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           62
+ Frac in state 0 =     0.0941     Frac in state 1 =     0.9059     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           63
+ Frac in state 0 =     0.0937     Frac in state 1 =     0.9063     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           64
+ Frac in state 0 =     0.0935     Frac in state 1 =     0.9065     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           65
+ Frac in state 0 =     0.0930     Frac in state 1 =     0.9070     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           66
+ Frac in state 0 =     0.0927     Frac in state 1 =     0.9073     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           67
+ Frac in state 0 =     0.0923     Frac in state 1 =     0.9077     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           68
+ Frac in state 0 =     0.0918     Frac in state 1 =     0.9082     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           69
+ Frac in state 0 =     0.0916     Frac in state 1 =     0.9084     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           70
+ Frac in state 0 =     0.0913     Frac in state 1 =     0.9087     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           71
+ Frac in state 0 =     0.0909     Frac in state 1 =     0.9091     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           72
+ Frac in state 0 =     0.0908     Frac in state 1 =     0.9092     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           73
+ Frac in state 0 =     0.0904     Frac in state 1 =     0.9096     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           74
+ Frac in state 0 =     0.0905     Frac in state 1 =     0.9095     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           75
+ Frac in state 0 =     0.0902     Frac in state 1 =     0.9098     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           76
+ Frac in state 0 =     0.0898     Frac in state 1 =     0.9102     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           77
+ Frac in state 0 =     0.0894     Frac in state 1 =     0.9106     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           78
+ Frac in state 0 =     0.0892     Frac in state 1 =     0.9108     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           79
+ Frac in state 0 =     0.0890     Frac in state 1 =     0.9110     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           80
+ Frac in state 0 =     0.0888     Frac in state 1 =     0.9112     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           81
+ Frac in state 0 =     0.0884     Frac in state 1 =     0.9116     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           82
+ Frac in state 0 =     0.0881     Frac in state 1 =     0.9119     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           83
+ Frac in state 0 =     0.0882     Frac in state 1 =     0.9118     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           84
+ Frac in state 0 =     0.0878     Frac in state 1 =     0.9122     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           85
+ Frac in state 0 =     0.0876     Frac in state 1 =     0.9124     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           86
+ Frac in state 0 =     0.0875     Frac in state 1 =     0.9125     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           87
+ Frac in state 0 =     0.0872     Frac in state 1 =     0.9128     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           88
+ Frac in state 0 =     0.0866     Frac in state 1 =     0.9134     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           89
+ Frac in state 0 =     0.0869     Frac in state 1 =     0.9131     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           90
+ Frac in state 0 =     0.0864     Frac in state 1 =     0.9136     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           91
+ Frac in state 0 =     0.0864     Frac in state 1 =     0.9136     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           92
+ Frac in state 0 =     0.0862     Frac in state 1 =     0.9138     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           93
+ Frac in state 0 =     0.0860     Frac in state 1 =     0.9140     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           94
+ Frac in state 0 =     0.0856     Frac in state 1 =     0.9144     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           95
+ Frac in state 0 =     0.0858     Frac in state 1 =     0.9142     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           96
+ Frac in state 0 =     0.0852     Frac in state 1 =     0.9148     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           97
+ Frac in state 0 =     0.0851     Frac in state 1 =     0.9149     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           98
+ Frac in state 0 =     0.0847     Frac in state 1 =     0.9153     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
+ step           99
+ Frac in state 0 =     0.0844     Frac in state 1 =     0.9156     Frac in state 2 =     0.0000     Frac in state 3 =     0.0000     
