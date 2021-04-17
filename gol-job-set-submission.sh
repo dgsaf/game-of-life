@@ -73,7 +73,7 @@ for version_name in ${version_names} ; do
 
     parameter_string=$(kv_string parameters)
     echo "--export=${parameter_string}"
-    sbatch gol-job-submission.slurm --export=${parameter_string}
+    sbatch --export=${parameter_string} gol-job-submission.slurm
 done
 echo
 
@@ -97,7 +97,7 @@ for version_name in ${version_names} ; do
 
         parameter_string=$(kv_string parameters)
         echo "--export=${parameter_string}"
-        sbatch gol-job-submission.slurm --export=${parameter_string}
+        sbatch --export=${parameter_string} gol-job-submission.slurm
     done
 done
 echo
@@ -125,7 +125,7 @@ for version_name in ${version_names_parallel} ; do
 
         parameter_string=$(kv_string parameters)
         echo "--export=${parameter_string}"
-        sbatch gol-job-submission.slurm --export=${parameter_string}
+        sbatch --export=${parameter_string} gol-job-submission.slurm
     done
 done
 echo

@@ -80,5 +80,5 @@ else
 
     echo "GOL simulation will commence"
 
-    srun -n 1 -c ${n_omp} ${exe} ${args} > ${log_filename}
+    # srun -n 1 -c ${n_omp} ${exe} ${args} > ${log_filename}
 fi
