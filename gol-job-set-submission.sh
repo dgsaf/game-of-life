@@ -54,9 +54,9 @@ parameters[boundary_type]=0
 # load appropriate modules and compile code
 module load gcc/8.3.0
 
-make clean
-make all
-make cpu_openmp_loop_fort
+# make clean
+# make all
+# make cpu_openmp_loop_fort
 
 # GOL job sets
 echo "GOL SLURM job set submission"
