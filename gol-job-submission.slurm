@@ -8,7 +8,7 @@
 #SBATCH --export=NONE
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=16
 
 # parameters
 # Redundant when using gol-job-set-submission.sh to export parameter sets into
