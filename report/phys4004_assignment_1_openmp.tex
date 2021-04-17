@@ -225,6 +225,46 @@ language=Fortran
 \subsection{Uniform Behaviour Verification}
 \label{sec:unif-behav-verif}
 
+All versions of the GOL simulation were executed on a $10 \cross 10$ grid, for
+10 steps, with ASCII visualisation on, and with $\mathrm{n_{omp}} = 4$ for the
+parallel versions of the code.
+The behaviour of the different versions can be compared exactly by examining the
+ASCII visualisation of the grids to show that they are identical, and/or by
+comparing the statistics of the grids produced.
+
+To compare the ASCII visualisations for each version, using the \lstinline{diff}
+command to compare the \lstinline[style=ff]{output/*ngrid-10x10*/log.txt} output
+for each version from that of
+\lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90} should indicate any
+differences in behaviour.
+If each version produces identical grids, the only differences should be timing
+results.
+\begin{lstlisting}[language=Bash]
+  original="output/GOL-01_gol_cpu_serial_fort.nomp-4.ngrid-10x10.nsteps-10.\
+  ic_type-0.vis_type-0.rule_type-0.nghbr_type-0.bndry_type-0/log.txt"
+
+  for log in output/*ngrid-10x10*/log.txt; do
+    diff ${original} ${log}
+  done
+\end{lstlisting}
+
+Similarly, to compare the statistics, we again use the \lstinline{diff} command
+to compare the \lstinline[style=ff]{output/*ngrid-10x10*/stats.txt} output
+for each version from that of
+\lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90}.
+\begin{lstlisting}[language=Bash]
+  original="output/GOL-01_gol_cpu_serial_fort.nomp-4.ngrid-10x10.nsteps-10.\
+  ic_type-0.vis_type-0.rule_type-0.nghbr_type-0.bndry_type-0/stats.txt"
+
+  for stats in output/*ngrid-10x10*/stats.txt; do
+    diff ${original} ${stats}
+  done
+\end{lstlisting}
+
+Using both methods on the data collected in \lstinline[style=ff]{output/}, we
+have verified that the different versions produce identical grids and thus
+statistics.
+
 \subsection{Scaling Behaviour}
 \label{sec:scaling-behaviour}
 
