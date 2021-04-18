@@ -129,7 +129,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
 
     fmt = "(A15,I1,A3,F10.4,A4)"
     ntot = opt%n * opt%m
-    num_in_state = 0;
+    num_in_state = 0
     do i = 1, opt%n
         do j = 1, opt%m
             state = current_grid(i,j)

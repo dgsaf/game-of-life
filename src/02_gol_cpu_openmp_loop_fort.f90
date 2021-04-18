@@ -205,7 +205,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   fmt = "(A15,I1,A3,F10.4,A4)"
   ntot = opt%n * opt%m
 
-  num_in_state(:) = 0;
+  num_in_state(:) = 0
 
   ! Calculated the number of cells in each state across the entire grid.
   ! Inner and outer loops have been swapped due to Fortran storing arrays in

@@ -28,7 +28,7 @@
   , frame=single
   , backgroundcolor=\color{white}
   , rulecolor=\color{black}
-  , captionpos=a
+  , captionpos=b
 }
 
 % file or folder
@@ -108,6 +108,8 @@ provided by Dr Pascal Elahi, with the following additions:
   logging output and statistics of the GOL simulation confined there.
   If the output directory already exists, the job isn't submitted to prevent
   repeating work needlessly.
+  Note that the \lstinline[style=ff]{sbatch} job request is invoked with
+  \lstinline{--cpus-per-task=16}.
 
 \item \lstinline[style=ff]{gol-job-set-submission.sh}: a bash script which
   constructs different sets of parameters, and executes
@@ -155,6 +157,27 @@ provided by Dr Pascal Elahi, with the following additions:
   \lstinline[style=ff]{output/<unique_parameter_set>/log.txt} and \\
   \lstinline[style=ff]{output/<unique_parameter_set>/stats.txt}.
 
+\item \lstinline[style=ff]{gol-data-extract.sh}: a bash script which extracts
+  the final timing data for the two scaling batches of jobs:
+  \begin{itemize}
+  \item The scaling batch, which includes a job for every version of the GOL
+    simulation, on a range of grid sizes, $2^{n} \cross 2^{n}$ for
+    $n = 1, \dotsc, 14$, for 100 steps, and with no visualisation.
+
+  \item The OMP parallel thread scaling batch, which includes a job for every
+    parallel version of the GOL simulation, for a range of assigned threads,
+    $\mathrm{n_{omp}} = 1, \dotsc, 16$, and for a range of grid sizes,
+    $2^{n} \cross 2^{n}$, for $n = 1, \dotsc 14$, with no visualisation.
+  \end{itemize}
+  A data directory is created for each scaling batch of jobs, and a
+  \lstinline[style=ff]{.csv} file is created for each unique job, if it doesn't
+  already exist.
+
+\item \lstinline[style=ff]{data/}: a directory which includes a subdirectory for
+  each scaling batch of jobs, each of which contains a set of
+  \lstinline[style=ff]{.csv} files, consisting of the grid length and timing
+  data, for each of the jobs in the batch.
+
 \item \lstinline[style=ff]{report/}: a directory which includes this
   \lstinline[style=ff]{.tex} file and other files suitable for submission of
   this assignment.
@@ -184,11 +207,50 @@ to the codebase.
 Small, but important, sections of code will be presented and discussed; the
 codebase in its entirety is presented in \autoref{sec:appendix}.
 
-\subsection{Bash Scripts}
-\label{sec:bash-scripts}
+\subsection{Common Code}
+\label{sec:common-code}
+
+The entire common code, \lstinline[style=ff]{src/common_fort.f90}, can be found
+in \autoref{sec:common_fort}.
+
+Only a small modification has been made to
+\lstinline[style=ff]{src/common_fort.f90} from the original code provided by Dr
+Pascal Elahi: the length of the variable \lstinline{arg} has been increased from
+32 to 2000.
+This is due to the slurm script \lstinline[style=ff]{gol-job-submission.slurm}
+providing, as one of the command line arguments, long strings for the variable
+\lstinline{statsfile}.
+This is necessary for proper manipulation of the
+\lstinline[style=ff]{*/stats.txt} output file, which was being truncated prior
+to the change.
+
+The modified code snippet is shown below.
+
+\lstinputlisting[
+language=Fortran
+, linerange={156-156}
+, firstnumber=156
+]{
+  ../src/common_fort.f90
+}
 
 \subsection{Serial Code}
 \label{sec:serial-code}
+
+\subsubsection{Original Serial Code}
+\label{sec:original-serial-code}
+
+The entire original serial code,
+\lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90}, can be found in
+\autoref{sec:01_gol_cpu_serial_fort}.
+
+It contained a bug, which indexed the \lstinline{num_in_state} and
+\lstinline{frac} arrays using 1-based indexing rather than 0-based indexing
+(mandated by the parameters defined in
+\lstinline[style=ff]{src/common_fort.f90}), resulting in incorrect statistics
+being written to the statistics file.
+
+The corrected code snippets are shown below.
 
 \lstinputlisting[
 language=Fortran
@@ -206,17 +268,55 @@ language=Fortran
   ../src/01_gol_cpu_serial_fort.f90
 }
 
-\subsubsection{Original Serial Code}
-\label{sec:original-serial-code}
-
 \subsubsection{Improved Serial Code}
 \label{sec:improved-serial-code}
+
+The entire improved serial code,
+\lstinline[style=ff]{src/02_gol_cpu_serial_fort.f90}, can be found in
+\autoref{sec:02_gol_cpu_serial_fort}.
+
+It can be observed in \lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90},
+that the nested \lstinline[language=Fortran]{do} loops over the variable
+\lstinline[language=Fortran]{grid(:, :)} do not respect Fortran's column major
+order for multi-dimensional arrays.
+Hence, it is guaranteed that cache misses are occuring as the program needs to
+stride over the array in memory to access elements of
+\lstinline[language=Fortran]{grid(:, :)}.
+By reversing the order of these nested \lstinline[language=Fortran]{do} loops,
+wherever they occur, the program will no longer suffer from these cache misses,
+and will instead collect large blocks of contiguous memory, yielding performance
+benefits.
+
+The modified code snippets are shown below.
+
+\lstinputlisting[
+language=Fortran
+, linerange={121-125}
+, firstnumber=121
+]{
+  ../src/02_gol_cpu_serial_fort.f90
+}
+
+\lstinputlisting[
+language=Fortran
+, linerange={196-200}
+, firstnumber=196
+]{
+  ../src/02_gol_cpu_serial_fort.f90
+}
 
 \subsubsection{Profiling Comparison}
 \label{sec:profiling-comparison}
 
 \subsection{Parallel Loop Code}
 \label{sec:parallel-loop-code}
+
+The entire parallel loop code,
+\lstinline[style=ff]{src/02_gol_cpu_openmp_loop_fort.f90}, can be found in
+\autoref{sec:02_gol_cpu_openmp_loop_fort}.
+
+\subsection{Bash Scripts}
+\label{sec:bash-scripts}
 
 \newpage
 \section{Results}
@@ -325,5 +425,13 @@ language=Bash
 \lstinputlisting[
 language=Bash
 ]{../gol-job-set-submission.sh}
+
+\newpage
+\subsection{gol-data-extract.sh}
+\label{sec:gol-data-extract}
+
+\lstinputlisting[
+language=Bash
+]{../gol-data-extract.sh}
 
 \end{document}

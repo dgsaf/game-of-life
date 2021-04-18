@@ -11,12 +11,13 @@
    (LaTeX-add-labels
     "sec:Overview"
     "sec:code-synopsis"
-    "sec:bash-scripts"
+    "sec:common-code"
     "sec:serial-code"
     "sec:original-serial-code"
     "sec:improved-serial-code"
     "sec:profiling-comparison"
     "sec:parallel-loop-code"
+    "sec:bash-scripts"
     "sec:results"
     "sec:unif-behav-verif"
     "sec:scaling-behaviour"
@@ -28,6 +29,7 @@
     "sec:02_gol_cpu_serial_fort"
     "sec:02_gol_cpu_openmp_loop_fort"
     "sec:gol-job-submission"
-    "sec:gol-job-set-submission"))
+    "sec:gol-job-set-submission"
+    "sec:gol-data-extract"))
  :latex)
 
