@@ -1,0 +1,98 @@
+;; RefTeX parse info file
+;; File: /home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex
+;; User: tom (Tom Ross)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/")
+
+(label-numbers)
+
+(bof "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex")
+
+(toc "toc" "    1 Introduction" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "1" "\\section{Introduction}" 1008)
+
+(toc "toc" "    2 Code Synopsis" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "2" "\\section{Code Synopsis}" 7891)
+
+("sec:code-synopsis" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "    2 Bash Scripting" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "2" "\\section{Bash Scripting}" 8179)
+
+("sec:bash-scripting" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "    2 Serial Code" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "2" "\\section{Serial Code}" 9165)
+
+("sec:serial-code" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      2.1 Common" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "2.1" "\\subsection{Common}" 9213)
+
+("sec:common" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      2.1 Original Serial Code" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "2.1" "\\subsection{Original Serial Code}" 9215)
+
+("sec:original-serial-code" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      2.2 Improved Serial Code" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "2.2" "\\subsection{Improved Serial Code}" 10386)
+
+("sec:improved-serial-code" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      2.3 Profiling Comparison" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "2.3" "\\subsection{Profiling Comparison}" 12076)
+
+("sec:profiling-comparison" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "    3 Loop Parallel Code" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "3" "\\section{Loop Parallel Code}" 14548)
+
+(toc "toc" "        3.0.1 GOL SLURM Job Submission" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 4 "3.0.1" "\\subsubsection{GOL SLURM Job Submission}" 17299)
+
+("sec:gol-slurm-job" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "        3.0.2 GOL Job Set" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 4 "3.0.2" "\\subsubsection{GOL Job Set}" 17498)
+
+("sec:gol-job-set" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "        3.0.3 GOL Data Extract" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 4 "3.0.3" "\\subsubsection{GOL Data Extract}" 17697)
+
+("sec:gol-data-extract" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+("sec:loop-parallel-code" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "    4 Results" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "4" "\\section{Results}" 17888)
+
+("sec:results" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      4.1 Uniform Behaviour Verification" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "4.1" "\\subsection{Uniform Behaviour Verification}" 17927)
+
+("sec:unif-behav-verif" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      4.2 Scaling Behaviour" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "4.2" "\\subsection{Scaling Behaviour}" 19751)
+
+("sec:scaling-behaviour" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      4.3 Thread Independence Verification" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "4.3" "\\subsection{Thread Independence Verification}" 19813)
+
+("sec:thre-indep-verif" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "    5 appendix" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "5" "\\section{appendix}" 21372)
+
+("sec:appendix" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "      5.1 01_gol_cpu_serial_fort.f90" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 3 "5.1" "\\subsection{01_gol_cpu_serial_fort.f90}" 21543)
+
+("sec:01_gol_cpu_serial_fort" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+("sec:introduction" "s" nil "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil "")
+
+(toc "toc" "    1 Introduction" "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex" nil 2 "1" "\\section{Introduction}" 1008)
+
+(eof "/home/tom/Dropbox/university/2021_1/high_performance_computing/assessments/assignments/1/game-of-life/report/phys4004_assignment_1_openmp.tex")
+))
+

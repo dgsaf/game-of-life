@@ -8,16 +8,19 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Profiling Comparison}{6}{subsubsection.2.2.3}% 
 \contentsline {subsection}{\numberline {2.3}Parallel Loop Code}{7}{subsection.2.3}% 
 \contentsline {subsection}{\numberline {2.4}Bash Scripts}{8}{subsection.2.4}% 
+\contentsline {subsubsection}{\numberline {2.4.1}GOL Job Submission}{8}{subsubsection.2.4.1}% 
+\contentsline {subsubsection}{\numberline {2.4.2}GOL Job Set}{8}{subsubsection.2.4.2}% 
+\contentsline {subsubsection}{\numberline {2.4.3}GOL Data Extract}{8}{subsubsection.2.4.3}% 
 \contentsline {section}{\numberline {3}Results}{9}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Uniform Behaviour Verification}{9}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Scaling Behaviour}{9}{subsection.3.2}% 
 \contentsline {subsection}{\numberline {3.3}Thread Independence Verification}{9}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Thread Scaling Behaviour}{9}{subsection.3.4}% 
-\contentsline {section}{\numberline {A}Appendix}{10}{appendix.A}% 
-\contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{10}{subsection.A.1}% 
-\contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{15}{subsection.A.2}% 
-\contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{18}{subsection.A.3}% 
-\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{23}{subsection.A.4}% 
-\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{28}{subsection.A.5}% 
-\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{30}{subsection.A.6}% 
-\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{33}{subsection.A.7}% 
+\contentsline {subsection}{\numberline {3.4}Thread Scaling Behaviour}{10}{subsection.3.4}% 
+\contentsline {section}{\numberline {A}Appendix}{11}{appendix.A}% 
+\contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{11}{subsection.A.1}% 
+\contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{16}{subsection.A.2}% 
+\contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{19}{subsection.A.3}% 
+\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{24}{subsection.A.4}% 
+\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{29}{subsection.A.5}% 
+\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{31}{subsection.A.6}% 
+\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{34}{subsection.A.7}% 

@@ -3,7 +3,7 @@
 % - Style
 \usepackage{base}
 
-\setlength{\parskip}{1 em}
+% \setlength{\parskip}{1 em}
 
 % - Listings
 \usepackage{color}
@@ -461,10 +461,16 @@ The entire GOL job submission SLURM script,
 \subsubsection{GOL Job Set}
 \label{sec:gol-job-set}
 
+The entire GOL job set submission script,
+\lstinline[style=ff]{gol-job-set-submission.sh}, can be found in
+\autoref{sec:gol-job-set-submission}.
+
 \subsubsection{GOL Data Extract}
 \label{sec:gol-data}
 
-
+The entire GOL data extract script
+\lstinline[style=ff]{gol-data-extract.sh}, can be found in
+\autoref{sec:gol-data-extract}.
 
 \newpage
 \section{Results}
@@ -520,6 +526,40 @@ statistics.
 
 \subsection{Thread Independence Verification}
 \label{sec:thre-indep-verif}
+
+All parallel versions of the GOL simulation were executed on a $10 \cross 10$
+grid, for 10 steps, with ASCII visualisation on, and for a range of assigned
+threads $\mathrm{n_{omp}} = 1, \dotsc, 16$.
+The behaviour of the different versions can be compared exactly by examining the
+ASCII visualisation of the grids to show that they are identical, and/or by
+comparing the statistics of the grids produced.
+
+The ASCII visualisations and statistics can be compared by using the
+\lstinline[language=Bash]{diff} command in an almost identical way as in
+\autoref{sec:unif-behav-verif}.
+
+\begin{lstlisting}[language=Bash]
+  original="output/GOL-02_gol_cpu_openmp_loop_fort.nomp-1.ngrid-10x10.nsteps-10.\
+  ic_type-0.vis_type-0.rule_type-0.nghbr_type-0.bndry_type-0/log.txt"
+
+  for log in output/*openmp*ngrid-10x10*/log.txt; do
+    diff ${original} ${log}
+  done
+\end{lstlisting}
+
+\begin{lstlisting}[language=Bash]
+  original="output/GOL-02_gol_cpu_openmp_loop_fort.nomp-1.ngrid-10x10.nsteps-10.\
+  ic_type-0.vis_type-0.rule_type-0.nghbr_type-0.bndry_type-0/stats.txt"
+
+  for stats in output/*openmp*ngrid-10x10*/stats.txt; do
+    diff ${original} ${stats}
+  done
+\end{lstlisting}
+
+Using both methods on the data collected in \lstinline[style=ff]{output/}, we
+have verified that the parallel versions produce identical grids and statistics,
+independently of the number of OMP threads assigned.
+
 
 \subsection{Thread Scaling Behaviour}
 \label{sec:thread-scaling-behaviour}

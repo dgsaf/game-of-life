@@ -7,16 +7,19 @@
 \BOOKMARK [3][-]{subsubsection.2.2.3}{Profiling Comparison}{subsection.2.2}% 7
 \BOOKMARK [2][-]{subsection.2.3}{Parallel Loop Code}{section.2}% 8
 \BOOKMARK [2][-]{subsection.2.4}{Bash Scripts}{section.2}% 9
-\BOOKMARK [1][-]{section.3}{Results}{}% 10
-\BOOKMARK [2][-]{subsection.3.1}{Uniform Behaviour Verification}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.2}{Scaling Behaviour}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.3}{Thread Independence Verification}{section.3}% 13
-\BOOKMARK [2][-]{subsection.3.4}{Thread Scaling Behaviour}{section.3}% 14
-\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 15
-\BOOKMARK [2][-]{subsection.A.1}{src/common\137fort.f90}{appendix.A}% 16
-\BOOKMARK [2][-]{subsection.A.2}{src/01\137gol\137cpu\137serial\137fort.f90}{appendix.A}% 17
-\BOOKMARK [2][-]{subsection.A.3}{src/02\137gol\137cpu\137serial\137fort.f90}{appendix.A}% 18
-\BOOKMARK [2][-]{subsection.A.4}{src/02\137gol\137cpu\137openmp\137loop\137fort.f90}{appendix.A}% 19
-\BOOKMARK [2][-]{subsection.A.5}{gol-job-submission.slurm}{appendix.A}% 20
-\BOOKMARK [2][-]{subsection.A.6}{gol-job-set-submission.sh}{appendix.A}% 21
-\BOOKMARK [2][-]{subsection.A.7}{gol-data-extract.sh}{appendix.A}% 22
+\BOOKMARK [3][-]{subsubsection.2.4.1}{GOL Job Submission}{subsection.2.4}% 10
+\BOOKMARK [3][-]{subsubsection.2.4.2}{GOL Job Set}{subsection.2.4}% 11
+\BOOKMARK [3][-]{subsubsection.2.4.3}{GOL Data Extract}{subsection.2.4}% 12
+\BOOKMARK [1][-]{section.3}{Results}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Uniform Behaviour Verification}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{Scaling Behaviour}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.3}{Thread Independence Verification}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.4}{Thread Scaling Behaviour}{section.3}% 17
+\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 18
+\BOOKMARK [2][-]{subsection.A.1}{src/common\137fort.f90}{appendix.A}% 19
+\BOOKMARK [2][-]{subsection.A.2}{src/01\137gol\137cpu\137serial\137fort.f90}{appendix.A}% 20
+\BOOKMARK [2][-]{subsection.A.3}{src/02\137gol\137cpu\137serial\137fort.f90}{appendix.A}% 21
+\BOOKMARK [2][-]{subsection.A.4}{src/02\137gol\137cpu\137openmp\137loop\137fort.f90}{appendix.A}% 22
+\BOOKMARK [2][-]{subsection.A.5}{gol-job-submission.slurm}{appendix.A}% 23
+\BOOKMARK [2][-]{subsection.A.6}{gol-job-set-submission.sh}{appendix.A}% 24
+\BOOKMARK [2][-]{subsection.A.7}{gol-data-extract.sh}{appendix.A}% 25
