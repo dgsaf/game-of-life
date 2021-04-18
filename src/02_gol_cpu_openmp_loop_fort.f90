@@ -200,7 +200,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
   integer*8 :: ntot
   ! num_in_state and frac modified from dimension(NUMSTATES) to
   ! dimension(0:NUMSTATES-1) to synchronise with the 0-based indexing of
-  ! states mandated in common_fort.f90
+  ! states mandated in common_fort.f90.
   integer, dimension(0:NUMSTATES-1) :: num_in_state
   real*8, dimension(0:NUMSTATES-1) :: frac
   character(len=30) :: fmt
@@ -254,7 +254,7 @@ subroutine game_of_life_stats(opt, step, current_grid)
 
   write(10,*) "step ", step
 
-  ! loop bounds modified to synchronise with 0-based indexing of frac(:)
+  ! Loop bounds modified to synchronise with 0-based indexing of frac(:).
   do i = 0, NUMSTATES-1
     write(10,fmt, advance="no") "Frac in state ", i, " = ", frac(i), " "
   end do

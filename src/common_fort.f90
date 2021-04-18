@@ -153,7 +153,7 @@ contains
         implicit none
         type(Options), intent(inout) :: opt
         character(len=2000) :: cmd
-        ! arg length changed from 32 to 2000 to accommodate large statsfilename
+        ! arg length changed from 32 to 2000 to accommodate large statsfilename.
         character(len=2000) :: arg
         character(len=2000) :: statsfilename
         integer :: count
