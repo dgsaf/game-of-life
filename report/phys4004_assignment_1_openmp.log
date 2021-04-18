@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  18 APR 2021 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  18 APR 2021 20:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1581,20 +1581,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [34]) [35] (../gol-data-extract.sh [36] [37])
 No complaints by nag.
 [38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 773.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 773.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 774.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 774.
  (./phys4004_assignment_1_openmp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 773.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 773.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 774.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 774.
 Package rerunfilecheck Info: File `phys4004_assignment_1_openmp.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 9DF02C97A6688A98E41F094E375660A2;1773.
  ) 
 Here is how much of TeX's memory you used:
- 49066 strings out of 492616
- 1105126 string characters out of 6106108
+ 49113 strings out of 492616
+ 1106882 string characters out of 6106108
  1787203 words of memory out of 5000000
- 50681 multiletter control sequences out of 15000+600000
+ 50728 multiletter control sequences out of 15000+600000
  549663 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,19n,105p,843b,2330s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1629,7 +1629,7 @@ n1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt1
 hare/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1iz05g9hz5h2nh
 nd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/ams
 fonts/cm/cmtt9.pfb>
-Output written on phys4004_assignment_1_openmp.pdf (38 pages, 409244 bytes).
+Output written on phys4004_assignment_1_openmp.pdf (38 pages, 409477 bytes).
 PDF statistics:
  2093 PDF objects out of 2487 (max. 8388607)
  2013 compressed objects within 21 object streams

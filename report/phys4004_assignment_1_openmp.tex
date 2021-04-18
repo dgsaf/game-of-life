@@ -575,21 +575,21 @@ improvements in total elapsed time.
       ]
 
       \addplot [
-      color = red!0!blue
+      color = black!0!red
       , mark = diamond*
       ] table [col sep = comma]
       {../data/scaling/01_gol_cpu_serial_fort.csv};
       \addlegendentry{Original Serial}
 
       \addplot [
-      color = red!50!blue
+      color = black!50!red
       , mark = diamond*
       ] table [col sep = comma]
       {../data/scaling/02_gol_cpu_serial_fort.csv};
       \addlegendentry{Improved Serial}
 
       \addplot [
-      color = red!100!blue
+      color = black!100!red
       , mark = diamond*
       ] table [col sep = comma]
       {../data/scaling/02_gol_cpu_openmp_loop_fort.csv};
@@ -686,13 +686,14 @@ results presented in \autoref{fig:parallel_scaling}.
       ]
 
       \pgfplotsforeachungrouped \n in {1, ..., 16} {
-        \pgfmathtruncatemacro{\i}{real(\n * (100.0 / 16.0)}
-
+        \pgfmathtruncatemacro{\i}{real(\n) * (100.0 / 16.0)}
+        \edef\temp{\noexpand%
         \addplot [
-        color = red!\i!blue
+        color = red!\i!black
         , mark = diamond*
         ] table [col sep = comma]
         {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-\n.csv};
+        }\temp
         \addlegendentryexpanded{$\mathrm{n_{omp}} = \n$}
       }
 
