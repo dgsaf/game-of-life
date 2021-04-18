@@ -62,30 +62,35 @@
 \newlabel{sec:unif-behav-verif}{{3.1}{9}{Uniform Behaviour Verification}{subsection.3.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Scaling Behaviour}{9}{subsection.3.2}\protected@file@percent }
 \newlabel{sec:scaling-behaviour}{{3.2}{9}{Scaling Behaviour}{subsection.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Thread Independence Verification}{9}{subsection.3.3}\protected@file@percent }
-\newlabel{sec:thre-indep-verif}{{3.3}{9}{Thread Independence Verification}{subsection.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Thread Scaling Behaviour}{10}{subsection.3.4}\protected@file@percent }
-\newlabel{sec:thread-scaling-behaviour}{{3.4}{10}{Thread Scaling Behaviour}{subsection.3.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix}{11}{appendix.A}\protected@file@percent }
-\newlabel{sec:appendix}{{A}{11}{Appendix}{appendix.A}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{11}{subsection.A.1}\protected@file@percent }
-\newlabel{sec:common_fort}{{A.1}{11}{src/common\_fort.f90}{subsection.A.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/common\textunderscore fort.f90}{11}{lstlisting.-5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{16}{subsection.A.2}\protected@file@percent }
-\newlabel{sec:01_gol_cpu_serial_fort}{{A.2}{16}{src/01\_gol\_cpu\_serial\_fort.f90}{subsection.A.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/01\textunderscore gol\textunderscore cpu\textunderscore serial\textunderscore fort.f90}{16}{lstlisting.-6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{19}{subsection.A.3}\protected@file@percent }
-\newlabel{sec:02_gol_cpu_serial_fort}{{A.3}{19}{src/02\_gol\_cpu\_serial\_fort.f90}{subsection.A.3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/02\textunderscore gol\textunderscore cpu\textunderscore serial\textunderscore fort.f90}{19}{lstlisting.-7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{24}{subsection.A.4}\protected@file@percent }
-\newlabel{sec:02_gol_cpu_openmp_loop_fort}{{A.4}{24}{src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{subsection.A.4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/02\textunderscore gol\textunderscore cpu\textunderscore openmp\textunderscore loop\textunderscore fort.f90}{24}{lstlisting.-8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{29}{subsection.A.5}\protected@file@percent }
-\newlabel{sec:gol-job-submission}{{A.5}{29}{gol-job-submission.slurm}{subsection.A.5}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../gol\textendash job\textendash submission.slurm}{29}{lstlisting.-9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{31}{subsection.A.6}\protected@file@percent }
-\newlabel{sec:gol-job-set-submission}{{A.6}{31}{gol-job-set-submission.sh}{subsection.A.6}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../gol\textendash job\textendash set\textendash submission.sh}{31}{lstlisting.-10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{34}{subsection.A.7}\protected@file@percent }
-\newlabel{sec:gol-data-extract}{{A.7}{34}{gol-data-extract.sh}{subsection.A.7}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../gol\textendash data\textendash extract.sh}{34}{lstlisting.-11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The scaling performance of the original serial, improved serial, and parallel loop (with $\mathrm  {n_{omp}} = 4$) versions of the GOL simulations, for 100 steps, with no visualisation, with increasingly large square grids ($\mathrm  {n_{grid}} = 2^{n}\cross 2^{n}$ for $n = 1, \dotsc  , 14$). Note that the x-axis is presented in $\log _{2}$-scale, and the y-axis is presented in $\log _{10}$ scale, to more clearly show the comparative behaviour of each version. Note also that the original serial code failed to complete within 10 minutes for the $2^{13} \cross 2^{13}$ and $2^{14} \cross 2^{14}$ grids, and therefore those data points were omitted. \relax }}{10}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:scaling}{{1}{10}{The scaling performance of the original serial, improved serial, and parallel loop (with $\mathrm {n_{omp}} = 4$) versions of the GOL simulations, for 100 steps, with no visualisation, with increasingly large square grids ($\mathrm {n_{grid}} = 2^{n}\cross 2^{n}$ for $n = 1, \dotsc , 14$). Note that the x-axis is presented in $\log _{2}$-scale, and the y-axis is presented in $\log _{10}$ scale, to more clearly show the comparative behaviour of each version. Note also that the original serial code failed to complete within 10 minutes for the $2^{13} \cross 2^{13}$ and $2^{14} \cross 2^{14}$ grids, and therefore those data points were omitted. \relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Thread Independence Verification}{10}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:thre-indep-verif}{{3.3}{10}{Thread Independence Verification}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Thread Scaling Behaviour}{11}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:thread-scaling-behaviour}{{3.4}{11}{Thread Scaling Behaviour}{subsection.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The scaling performance of the parallel versions of the GOL simulations, for 100 steps, with no visualisation, for a range of OMP threads assigned ($\mathrm  {n_{omp}} = 1, \dotsc  , 16$), with increasingly large square grids ($\mathrm  {n_{grid}} = 2^{n}\cross 2^{n}$ for $n = 1, \dotsc  , 14$). Note that the x-axis is presented in $\log _{2}$-scale, and the y-axis is presented in $\log _{10}$ scale, to more clearly show the comparative behaviour of each simulation. \relax }}{12}{figure.caption.3}\protected@file@percent }
+\newlabel{fig:parallel_scaling}{{2}{12}{The scaling performance of the parallel versions of the GOL simulations, for 100 steps, with no visualisation, for a range of OMP threads assigned ($\mathrm {n_{omp}} = 1, \dotsc , 16$), with increasingly large square grids ($\mathrm {n_{grid}} = 2^{n}\cross 2^{n}$ for $n = 1, \dotsc , 14$). Note that the x-axis is presented in $\log _{2}$-scale, and the y-axis is presented in $\log _{10}$ scale, to more clearly show the comparative behaviour of each simulation. \relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Appendix}{12}{appendix.A}\protected@file@percent }
+\newlabel{sec:appendix}{{A}{12}{Appendix}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{12}{subsection.A.1}\protected@file@percent }
+\newlabel{sec:common_fort}{{A.1}{12}{src/common\_fort.f90}{subsection.A.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/common\textunderscore fort.f90}{12}{lstlisting.-5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{18}{subsection.A.2}\protected@file@percent }
+\newlabel{sec:01_gol_cpu_serial_fort}{{A.2}{18}{src/01\_gol\_cpu\_serial\_fort.f90}{subsection.A.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/01\textunderscore gol\textunderscore cpu\textunderscore serial\textunderscore fort.f90}{18}{lstlisting.-6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{21}{subsection.A.3}\protected@file@percent }
+\newlabel{sec:02_gol_cpu_serial_fort}{{A.3}{21}{src/02\_gol\_cpu\_serial\_fort.f90}{subsection.A.3}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/02\textunderscore gol\textunderscore cpu\textunderscore serial\textunderscore fort.f90}{21}{lstlisting.-7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{26}{subsection.A.4}\protected@file@percent }
+\newlabel{sec:02_gol_cpu_openmp_loop_fort}{{A.4}{26}{src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{subsection.A.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/02\textunderscore gol\textunderscore cpu\textunderscore openmp\textunderscore loop\textunderscore fort.f90}{26}{lstlisting.-8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{31}{subsection.A.5}\protected@file@percent }
+\newlabel{sec:gol-job-submission}{{A.5}{31}{gol-job-submission.slurm}{subsection.A.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../gol\textendash job\textendash submission.slurm}{31}{lstlisting.-9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{33}{subsection.A.6}\protected@file@percent }
+\newlabel{sec:gol-job-set-submission}{{A.6}{33}{gol-job-set-submission.sh}{subsection.A.6}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../gol\textendash job\textendash set\textendash submission.sh}{33}{lstlisting.-10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{36}{subsection.A.7}\protected@file@percent }
+\newlabel{sec:gol-data-extract}{{A.7}{36}{gol-data-extract.sh}{subsection.A.7}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../gol\textendash data\textendash extract.sh}{36}{lstlisting.-11}\protected@file@percent }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  18 APR 2021 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/NixOS.org) (preloaded format=pdflatex 2020.11.17)  18 APR 2021 19:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1259,6 +1259,8 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@in@stream=\read3
 ))
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
+exmf/tex/generic/pgfplots/libs/tikzlibrarypgfplots.units.code.tex)
+(/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/listings/listings.sty
 \lst@mode=\count339
 \lst@gtempboxa=\box69
@@ -1288,37 +1290,37 @@ Package: listings 2018/09/02 1.7 (Carsten Heinz)
  (./phys4004_assignment_1_openmp.aux)
 \openout1 = `phys4004_assignment_1_openmp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
-LaTeX Font Info:    ... okay on input line 57.
-Package nag Info: pgf.sty is broken: disabling dollar check on input line 57.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+Package nag Info: pgf.sty is broken: disabling dollar check on input line 60.
 Package nag Info: Command \frontmatter not defined, skipping amendment on input
- line 57.
+ line 60.
 Package nag Info: Command \mainmatter not defined, skipping amendment on input 
-line 57.
+line 60.
 Package nag Info: Command \backmatter not defined, skipping amendment on input 
-line 57.
+line 60.
 Package nag Info: Command \RaggedLeft not defined, skipping amendment on input 
-line 57.
+line 60.
 Package nag Info: Command \RaggedRight not defined, skipping amendment on input
- line 57.
+ line 60.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-LaTeX Info: Redefining \microtypecontext on input line 57.
+LaTeX Info: Redefining \microtypecontext on input line 60.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1421,7 +1423,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.16} (current compat level: 1.13).
 
 \AtBeginShipoutBox=\box72
-Package hyperref Info: Link coloring ON on input line 57.
+Package hyperref Info: Link coloring ON on input line 60.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/hyperref/nameref.sty
@@ -1433,9 +1435,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count353
 )
-LaTeX Info: Redefining \ref on input line 57.
-LaTeX Info: Redefining \pageref on input line 57.
-LaTeX Info: Redefining \nameref on input line 57.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 (./phys4004_assignment_1_openmp.out) (./phys4004_assignment_1_openmp.out)
 \@outlinefile=\write4
@@ -1443,14 +1445,14 @@ LaTeX Info: Redefining \nameref on input line 57.
 
 \c@lstlisting=\count354
 Package nag Info: Command \captionabove not defined, skipping amendment on inpu
-t line 57.
+t line 60.
 Package nag Info: Command \captionbelow not defined, skipping amendment on inpu
-t line 57.
+t line 60.
 Package nag Info: Command \hc@caption not defined, skipping amendment on input 
-line 57.
+line 60.
 Package nag Info: Command \topcaption not defined, skipping amendment on input 
-line 57.
-LaTeX Font Info:    Try loading font information for U+msa on input line 57.
+line 60.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/amsfonts/umsa.fd
@@ -1460,7 +1462,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 exmf/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 57.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/amsfonts/umsb.fd
@@ -1487,14 +1489,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 /texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
 
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
  [2] [3]
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/listings/lstlang1.sty
@@ -1505,7 +1507,7 @@ exmf/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 ) [4]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 251.
+nput line 254.
  (../src/common_fort.f90)
 (../src/01_gol_cpu_serial_fort.f90) (../src/01_gol_cpu_serial_fort.f90)
 [5] (../src/02_gol_cpu_serial_fort.f90) (../src/02_gol_cpu_serial_fort.f90)
@@ -1518,56 +1520,119 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 (/nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/t
 exmf/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-) [9] [10] (../src/common_fort.f90 [11]
-[12] [13] [14]) [15] (../src/01_gol_cpu_serial_fort.f90 [16] [17]) [18]
-(../src/02_gol_cpu_serial_fort.f90 [19] [20] [21]) [22] [23]
-(../src/02_gol_cpu_openmp_loop_fort.f90 [24] [25] [26] [27]) [28]
-(../gol-job-submission.slurm [29]) [30] (../gol-job-set-submission.sh [31]
-[32]) [33] (../gol-data-extract.sh [34] [35])
+)
+Package pgfplots info on input line 575: Using 'lua backend=false' for axis: xm
+ode=log unsupported (yet).
+Package pgfplots info on input line 575: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {../data/scaling/01_gol_cpu_serial_fort.csv}
+PGFPlots: reading {../data/scaling/02_gol_cpu_serial_fort.csv}
+PGFPlots: reading {../data/scaling/02_gol_cpu_openmp_loop_fort.csv}
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10]
+Package pgfplots info on input line 686: Using 'lua backend=false' for axis: xm
+ode=log unsupported (yet).
+Package pgfplots info on input line 686: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+1.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+2.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+3.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+4.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+5.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+6.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+7.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+8.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+9.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+10.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+11.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+12.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+13.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+14.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+15.csv}
+PGFPlots: reading {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-
+16.csv}
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11] (../src/common_fort.f90 [12] [13] [14] [15]) [16] [17]
+(../src/01_gol_cpu_serial_fort.f90 [18] [19]) [20]
+(../src/02_gol_cpu_serial_fort.f90 [21] [22] [23]) [24] [25]
+(../src/02_gol_cpu_openmp_loop_fort.f90 [26] [27] [28] [29]) [30]
+(../gol-job-submission.slurm [31]) [32] (../gol-job-set-submission.sh [33]
+[34]) [35] (../gol-data-extract.sh [36] [37])
 No complaints by nag.
-[36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 627.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 627.
+[38]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 773.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 773.
  (./phys4004_assignment_1_openmp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 627.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 627.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 773.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 773.
 Package rerunfilecheck Info: File `phys4004_assignment_1_openmp.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 9DF02C97A6688A98E41F094E375660A2;1773.
  ) 
 Here is how much of TeX's memory you used:
- 48234 strings out of 492616
- 1081258 string characters out of 6106108
- 1776842 words of memory out of 5000000
- 49920 multiletter control sequences out of 15000+600000
- 547022 words of font info for 115 fonts, out of 8000000 for 9000
+ 49066 strings out of 492616
+ 1105126 string characters out of 6106108
+ 1787203 words of memory out of 5000000
+ 50681 multiletter control sequences out of 15000+600000
+ 549663 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,12n,105p,801b,2330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,19n,105p,843b,2330s stack positions out of 5000i,500n,10000p,200000b,80000s
 </nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
 /texmf/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></nix/store/l1iz05g9hz5h2nhnd
 68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined
--full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/l1
-iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/typ
-e1/public/amsfonts/cm/cmitt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-
-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share
-/texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/l1iz05g9hz5h2nhnd68
-a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfont
-s/cm/cmr10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-fu
-ll-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix/store/l1iz05g
-9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texliv
-e-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmti9.pfb></nix
-/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/
-fonts/type1/public/amsfonts/cm/cmtt10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs
-5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/c
-mtt8.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-201
-8/share/texmf/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on phys4004_assignment_1_openmp.pdf (36 pages, 343464 bytes).
+nts/cmextra/cmbsy9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-com
+bined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmbx10.pfb></nix/sto
+re/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/font
+s/type1/public/amsfonts/cm/cmbx12.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxn
+n1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmitt
+10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/
+share/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/l1iz05g9hz5h2
+nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combi
+ned-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/
+l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/t
+ype1/public/amsfonts/cm/cmmi9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-
+texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/
+texmf/fonts/type1/public/amsfonts/cm/cmr6.pfb></nix/store/l1iz05g9hz5h2nhnd68a6
+3acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-
+2018/share/texmf/fonts/type1/public/amsfonts/cm/cmr9.pfb></nix/store/l1iz05g9hz
+5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-c
+ombined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/st
+ore/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fon
+ts/type1/public/amsfonts/cm/cmti9.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxn
+n1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/amsfonts/cm/cmtt1
+0.pfb></nix/store/l1iz05g9hz5h2nhnd68a63acs5lxnn1n-texlive-combined-full-2018/s
+hare/texmf/fonts/type1/public/amsfonts/cm/cmtt8.pfb></nix/store/l1iz05g9hz5h2nh
+nd68a63acs5lxnn1n-texlive-combined-full-2018/share/texmf/fonts/type1/public/ams
+fonts/cm/cmtt9.pfb>
+Output written on phys4004_assignment_1_openmp.pdf (38 pages, 409244 bytes).
 PDF statistics:
- 2052 PDF objects out of 2073 (max. 8388607)
- 1981 compressed objects within 20 object streams
- 1450 named destinations out of 1728 (max. 500000)
- 24789 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 2093 PDF objects out of 2487 (max. 8388607)
+ 2013 compressed objects within 21 object streams
+ 1454 named destinations out of 1728 (max. 500000)
+ 25813 words of extra memory for PDF output out of 29859 (max. 10000000)
 

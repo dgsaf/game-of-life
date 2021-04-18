@@ -5,6 +5,9 @@
 
 % \setlength{\parskip}{1 em}
 
+% - Plotting
+\usepgfplotslibrary{units}
+
 % - Listings
 \usepackage{color}
 \usepackage{listings}
@@ -445,7 +448,7 @@ It was determined in some small scale tests that including the clause
 \lstinline{collapse(2)}, which would collapse the two perfectly-nested loops
 into one, generally did not produce a significant performance benefit and in
 some cases worsened performance.
-However this was only tested rudimentarily and may be more signficant for
+However this was only tested rudimentarily and may be more significant for
 increasingly large grid sizes.
 
 \subsection{Bash Scripts}
@@ -524,6 +527,90 @@ statistics.
 \subsection{Scaling Behaviour}
 \label{sec:scaling-behaviour}
 
+All versions of the GOL simulation were executed for 100 steps, with no
+visualisation, and for a range of grid sizes, $2^{n} \cross 2^{n}$ for $n = 1,
+\dotsc, 14$.
+For the parallel versions of the GOL simulation, $\mathrm{n_{omp}} = 4$ was
+selected.
+
+The time taken for each version to complete the simulation was extracted for
+each grid size, and the results are presented in \autoref{fig:scaling}.
+
+It can be seen that all versions of the code run for approximately less than a
+\SI{1}{\second}, with rather irregular comparative behaviour between each
+version, until a grid size of $2^{9} \cross 2^{9} = 512 \cross 512$ is reached,
+at which point the scaling behaviour becomes significantly more regular.
+Past this point, the original serial code is approximately an order-of-magnitude
+slower than the parallel loop code, while the improved serial code is only half
+an order-of-magnitude slower that the parallel loop code.
+
+While it should be noted that the parallel loop code is slightly slower for
+smaller grid sizes, as a result of the memory overhead associated with spawning
+and destroying threads, the total time difference is negligble, while for the
+larger grid sizes the parallel loop code is much faster with significant
+improvements in total elapsed time.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      use units
+      , scale = 1.5
+      , title = {Scaling performance of GOL Simulations}
+      , grid = major
+      , xmode = log
+      , ymode = log
+      , log basis x = {2}
+      , log basis y = {10}
+      , xlabel = {Grid length}
+      , ylabel = {Elapsed Time}
+      , y unit = {s}
+      , legend entries
+      , legend style = {
+        cells = {anchor=east}
+        , legend pos = north west
+      }
+      , xmin = 2
+      , xmax = 16384
+      ]
+
+      \addplot [
+      color = red!0!blue
+      , mark = diamond*
+      ] table [col sep = comma]
+      {../data/scaling/01_gol_cpu_serial_fort.csv};
+      \addlegendentry{Original Serial}
+
+      \addplot [
+      color = red!50!blue
+      , mark = diamond*
+      ] table [col sep = comma]
+      {../data/scaling/02_gol_cpu_serial_fort.csv};
+      \addlegendentry{Improved Serial}
+
+      \addplot [
+      color = red!100!blue
+      , mark = diamond*
+      ] table [col sep = comma]
+      {../data/scaling/02_gol_cpu_openmp_loop_fort.csv};
+      \addlegendentry{Parallel Loop}
+
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The scaling performance of the original serial, improved serial, and
+    parallel loop (with $\mathrm{n_{omp}} = 4$) versions of the GOL simulations,
+    for 100 steps, with no visualisation, with increasingly large square grids
+    ($\mathrm{n_{grid}} = 2^{n}\cross 2^{n}$ for $n = 1, \dotsc, 14$).
+    Note that the x-axis is presented in $\log_{2}$-scale, and the y-axis is
+    presented in $\log_{10}$ scale, to more clearly show the comparative
+    behaviour of each version.
+    Note also that the original serial code failed to complete within
+    10 minutes for the $2^{13} \cross 2^{13}$ and $2^{14} \cross 2^{14}$
+    grids, and therefore those data points were omitted.
+  }
+  \label{fig:scaling}
+\end{figure}
+
 \subsection{Thread Independence Verification}
 \label{sec:thre-indep-verif}
 
@@ -560,9 +647,68 @@ Using both methods on the data collected in \lstinline[style=ff]{output/}, we
 have verified that the parallel versions produce identical grids and statistics,
 independently of the number of OMP threads assigned.
 
-
 \subsection{Thread Scaling Behaviour}
 \label{sec:thread-scaling-behaviour}
+
+The parallel loop version of the GOL simulation was executed for 100 steps, with
+no visualisation, for a range of grid sizes, $2^{n} \cross 2^{n}$ for
+$n = 1, \dotsc, 14$, and for a range of the number of OMP threads used,
+$\mathrm{n_{omp}} = 1, \dotsc, 16$
+
+The time taken for the parallel loop code to complete the simulation was
+extracted for each number of OMP threads used, and for each grid size, with the
+results presented in \autoref{fig:parallel_scaling}.
+
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      use units
+      , scale = 1.5
+      , title = {Scaling performance of Parallel GOL Simulations for varying OMP
+        Threads}
+      , grid = major
+      , xmode = log
+      , ymode = log
+      , log basis x = {2}
+      , log basis y = {10}
+      , xlabel = {Grid length}
+      , ylabel = {Elapsed Time}
+      , y unit = {s}
+      , legend entries
+      , legend style = {
+        cells = {anchor=east}
+        , legend pos = outer north east
+      }
+      , xmin = 2
+      , xmax = 16384
+      ]
+
+      \pgfplotsforeachungrouped \n in {1, ..., 16} {
+        \pgfmathtruncatemacro{\i}{real(\n * (100.0 / 16.0)}
+
+        \addplot [
+        color = red!\i!blue
+        , mark = diamond*
+        ] table [col sep = comma]
+        {../data/parallel_thread_scaling/02_gol_cpu_openmp_loop_fort-\n.csv};
+        \addlegendentryexpanded{$\mathrm{n_{omp}} = \n$}
+      }
+
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The scaling performance of the parallel versions of the GOL
+    simulations, for 100 steps, with no visualisation, for a range of OMP
+    threads assigned ($\mathrm{n_{omp}} = 1, \dotsc, 16$), with increasingly
+    large square grids ($\mathrm{n_{grid}} = 2^{n}\cross 2^{n}$ for
+    $n = 1, \dotsc, 14$).
+    Note that the x-axis is presented in $\log_{2}$-scale, and the y-axis is
+    presented in $\log_{10}$ scale, to more clearly show the comparative
+    behaviour of each simulation.
+  }
+  \label{fig:parallel_scaling}
+\end{figure}
 
 \newpage
 \appendix
