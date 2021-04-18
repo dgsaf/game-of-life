@@ -114,6 +114,16 @@ provided by Dr Pascal Elahi, with the following additions:
 \item \lstinline[style=ff]{gol-job-set-submission.sh}: a bash script which
   constructs different sets of parameters, and executes
   \lstinline[style=ff]{gol-job-submission.slurm} for each parameter set.
+  The default values for the unspecified parameters are:
+  \begin{itemize}
+  \item $\mathrm{n_{omp}} = 4$,
+  \item $\mathrm{initial\_conditions\_type} = 0$ (random initial conditions),
+  \item $\mathrm{rule\_type} = 0$ (ordinary 2D GOL rule),
+  \item $\mathrm{neighbour\_type} = 0$ (Moore neighbourhood),
+  \item $\mathrm{boundary\_type} = 0$ (hard boundary with default state being
+    dead).
+  \end{itemize}
+
   The batches of jobs submitted are:
   \begin{itemize}
   \item A verification batch, which submits a job for every version of the GOL
@@ -194,8 +204,9 @@ Additionally, some minor modifications have been made to the following files:
   \lstinline{arg} has been increased from 32 to 2000 to allow for larger
   filenames for the variable \lstinline{statsfile}.
 
-\item \lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90}: a bug in the
-  \lstinline{game_of_life_stats()} subroutine has been
+\item \lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90}: an error in
+  \lstinline[language=Fortran]{subroutine game_of_life_stats()} concerning
+  array indexing has been corrected.
 \end{itemize}
 
 \newpage
@@ -303,6 +314,11 @@ The modified code snippets are shown below.
 language=Fortran
 , linerange={121-125}
 , firstnumber=121
+, caption={Modifications to order of nested \lstinline{do} loops within
+  \lstinline{subroutine game_of_life()}.
+  Mitigates problem of cache misses when accessing and updating
+  \lstinline{grid(i, j)}.}
+, label={lst:02_gol_cpu_serial_fort_snippet_1}
 ]{
   ../src/02_gol_cpu_serial_fort.f90
 }
@@ -311,6 +327,11 @@ language=Fortran
 language=Fortran
 , linerange={199-203}
 , firstnumber=199
+, caption={Modifications to order of nested \lstinline{do} loops within
+  \lstinline{subroutine game_of_life_stats()}.
+  Mitigates problem of cache misses when accessing and updating
+  \lstinline{grid(i, j)}.}
+, label={lst:02_gol_cpu_serial_fort_snippet_2}
 ]{
   ../src/02_gol_cpu_serial_fort.f90
 }
@@ -324,6 +345,36 @@ language=Fortran
 The entire parallel loop code,
 \lstinline[style=ff]{src/02_gol_cpu_openmp_loop_fort.f90}, can be found in
 \autoref{sec:02_gol_cpu_openmp_loop_fort}.
+It is derived from \lstinline[style=ff]{src/02_gol_cpu_serial_fort.f90} but with
+modifications to
+
+The OpenMP worksharing construct, \lstinline[language=Fortran]{parallel do}, has
+been introduced to parallelise the segments of the GOL simulation code which can
+be parallelised to yield performance improvements.
+From the profiling analysis, discussed in \autoref{sec:profiling-comparison},
+
+\lstinputlisting[
+language=Fortran
+, linerange={121-138}
+, firstnumber=121
+, caption={Inclusion of OMP parallel \lstinline{do} worksharing constructs
+  within \lstinline{subroutine game_of_life()}.}
+, label={lst:02_gol_cpu_openmp_loop_fort_snippet_1}
+]{
+  ../src/02_gol_cpu_openmp_loop_fort.f90
+}
+
+\lstinputlisting[
+language=Fortran
+, linerange={213-235}
+, firstnumber=213
+, caption={Inclusion of OMP parallel \lstinline{do} worksharing constructs
+  within \lstinline{subroutine game_of_life_stats()}.}
+, label={lst:02_gol_cpu_openmp_loop_fort_snippet_2}
+]{
+  ../src/02_gol_cpu_openmp_loop_fort.f90
+}
+
 
 \subsection{Bash Scripts}
 \label{sec:bash-scripts}
