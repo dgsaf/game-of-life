@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {2.1}Common Code}{4}{subsection.2.1}% 
 \contentsline {subsection}{\numberline {2.2}Serial Code}{4}{subsection.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.1}Original Serial Code}{4}{subsubsection.2.2.1}% 
-\contentsline {subsubsection}{\numberline {2.2.2}Improved Serial Code}{4}{subsubsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Improved Serial Code}{5}{subsubsection.2.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.3}Profiling Comparison}{5}{subsubsection.2.2.3}% 
 \contentsline {subsection}{\numberline {2.3}Parallel Loop Code}{5}{subsection.2.3}% 
 \contentsline {subsection}{\numberline {2.4}Bash Scripts}{5}{subsection.2.4}% 
@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{7}{subsection.A.1}% 
 \contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{12}{subsection.A.2}% 
 \contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{15}{subsection.A.3}% 
-\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{19}{subsection.A.4}% 
-\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{24}{subsection.A.5}% 
-\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{26}{subsection.A.6}% 
-\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{29}{subsection.A.7}% 
+\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{20}{subsection.A.4}% 
+\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{25}{subsection.A.5}% 
+\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{27}{subsection.A.6}% 
+\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{30}{subsection.A.7}% 

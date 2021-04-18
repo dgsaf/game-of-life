@@ -228,8 +228,11 @@ The modified code snippet is shown below.
 
 \lstinputlisting[
 language=Fortran
-, linerange={156-156}
+, linerange={156-157}
 , firstnumber=156
+, caption={Modifications to \lstinline{arg} variable within
+  \lstinline{subroutine getinput()}.}
+, label={lst:common_fort_snippet_1}
 ]{
   ../src/common_fort.f90
 }
@@ -254,16 +257,23 @@ The corrected code snippets are shown below.
 
 \lstinputlisting[
 language=Fortran
-, linerange={126-127}
+, linerange={126-130}
 , firstnumber=126
+, caption={Modifications to indexing of \lstinline{num_in_state} and
+  \lstinline{frac} array variable within
+  \lstinline{subroutine game_of_life_stats()}.}
+, label={lst:01_gol_cpu_serial_fort_snippet_1}
 ]{
   ../src/01_gol_cpu_serial_fort.f90
 }
 
 \lstinputlisting[
 language=Fortran
-, linerange={150-152}
-, firstnumber=150
+, linerange={153-156}
+, firstnumber=153
+, caption={Modifications to indexing of \lstinline{frac} array variable within
+  \lstinline{subroutine game_of_life_stats()}.}
+, label={lst:01_gol_cpu_serial_fort_snippet_2}
 ]{
   ../src/01_gol_cpu_serial_fort.f90
 }
@@ -299,8 +309,8 @@ language=Fortran
 
 \lstinputlisting[
 language=Fortran
-, linerange={196-200}
-, firstnumber=196
+, linerange={199-203}
+, firstnumber=199
 ]{
   ../src/02_gol_cpu_serial_fort.f90
 }
