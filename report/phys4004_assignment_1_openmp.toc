@@ -6,18 +6,18 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Original Serial Code}{5}{subsubsection.2.2.1}% 
 \contentsline {subsubsection}{\numberline {2.2.2}Improved Serial Code}{6}{subsubsection.2.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.3}Profiling Comparison}{6}{subsubsection.2.2.3}% 
-\contentsline {subsection}{\numberline {2.3}Parallel Loop Code}{6}{subsection.2.3}% 
-\contentsline {subsection}{\numberline {2.4}Bash Scripts}{7}{subsection.2.4}% 
-\contentsline {section}{\numberline {3}Results}{8}{section.3}% 
-\contentsline {subsection}{\numberline {3.1}Uniform Behaviour Verification}{8}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Scaling Behaviour}{8}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Thread Independence Verification}{8}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Thread Scaling Behaviour}{8}{subsection.3.4}% 
-\contentsline {section}{\numberline {A}Appendix}{9}{appendix.A}% 
-\contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{9}{subsection.A.1}% 
-\contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{14}{subsection.A.2}% 
-\contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{17}{subsection.A.3}% 
-\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{22}{subsection.A.4}% 
-\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{27}{subsection.A.5}% 
-\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{29}{subsection.A.6}% 
-\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{32}{subsection.A.7}% 
+\contentsline {subsection}{\numberline {2.3}Parallel Loop Code}{7}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Bash Scripts}{8}{subsection.2.4}% 
+\contentsline {section}{\numberline {3}Results}{9}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Uniform Behaviour Verification}{9}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Scaling Behaviour}{9}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Thread Independence Verification}{9}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Thread Scaling Behaviour}{9}{subsection.3.4}% 
+\contentsline {section}{\numberline {A}Appendix}{10}{appendix.A}% 
+\contentsline {subsection}{\numberline {A.1}src/common\_fort.f90}{10}{subsection.A.1}% 
+\contentsline {subsection}{\numberline {A.2}src/01\_gol\_cpu\_serial\_fort.f90}{15}{subsection.A.2}% 
+\contentsline {subsection}{\numberline {A.3}src/02\_gol\_cpu\_serial\_fort.f90}{18}{subsection.A.3}% 
+\contentsline {subsection}{\numberline {A.4}src/02\_gol\_cpu\_openmp\_loop\_fort.f90}{23}{subsection.A.4}% 
+\contentsline {subsection}{\numberline {A.5}gol-job-submission.slurm}{28}{subsection.A.5}% 
+\contentsline {subsection}{\numberline {A.6}gol-job-set-submission.sh}{30}{subsection.A.6}% 
+\contentsline {subsection}{\numberline {A.7}gol-data-extract.sh}{33}{subsection.A.7}% 

@@ -3,6 +3,8 @@
 % - Style
 \usepackage{base}
 
+\setlength{\parskip}{1 em}
+
 % - Listings
 \usepackage{color}
 \usepackage{listings}
@@ -80,7 +82,7 @@ provided by Dr Pascal Elahi, with the following additions:
   The results were collected for a GOL simulation on a $1000\cross1000$ grid,
   for 100 steps with no visualisation enabled.
 
-\item \lstinline[style=ff]{gol-job-submission.slurm}: a bash script which
+\item \lstinline[style=ff]{gol-job-submission.slurm}: a SLURM script which
   submits a \lstinline[style=ff]{sbatch} job request for a GOL simulation with a
   given set of parameters which include:
   \begin{itemize}
@@ -339,6 +341,50 @@ language=Fortran
 \subsubsection{Profiling Comparison}
 \label{sec:profiling-comparison}
 
+The two serial codes,
+\lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90} and
+\lstinline[style=ff]{src/02_gol_cpu_serial_fort.f90} were compiled with
+profiling turned on, and performed a GOL simulation on a
+$1000 \cross 1000$ grid, for 100 steps, with no visualisation.
+The profiling results are located in
+\lstinline[style=ff]{profiling/analysis_*.txt} and a brief summary of these
+results, and the relevant source code snippets, are included in
+\lstinline[style=ff]{profiling/profiling-summary.txt}.
+
+The original serial code took \SI{4.906}{\second} to complete.
+Cumulatively $\sim$\SI{45}{\percent} of the time was spent calculating the
+number of living neighbours of a given cell in
+\lstinline[language=Fortran]{subroutine game_of_life()},
+while cumulatively $\sim$\SI{40}{\percent} of the time was spent calculating the
+number of grid cells that were in a given state in
+\lstinline[language=Fortran]{subroutine game_of_life_stats()}.
+That is to say, $\sim$\SI{95}{\percent} of the time was spent accessing elements
+of \lstinline[language=Fortran]{grid(:, :)}.
+This clearly shows that the vast majority of the time spent in the GOL
+simulation concerns accessing elements of
+\lstinline[language=Fortran]{grid(:, :)}, and that improving the efficiency of
+these access operations ensures improved code performance.
+
+The improved serial code took \SI{2.949}{\second} to complete.
+Cumulatively $\sim$\SI{65}{\percent} of the time was spent calculating the
+number of living neighbours of a given cell in
+\lstinline[language=Fortran]{subroutine game_of_life()},
+while cumulatively only $\sim$\SI{5}{\percent} of time was spent calculating the
+number of grid cells that were in a given state in
+\lstinline[language=Fortran]{subroutine game_of_life_stats()}.
+It is clear that reversing the order of the nested
+\lstinline[language=Fortran]{do} loops has yielded a significant performance
+increase, with a $\sim$\SI{40}{\percent} reduction in time taken.
+Furthermore, the percentage of time spent accessing elements of
+\lstinline[language=Fortran]{grid(:, :)} has been reduced from
+$\sim$\SI{95}{\percent} to $\sim$\SI{70}{\percent}, indicating that the access
+operations are less of a bottleneck.
+
+Note that in \lstinline[language=Fortran]{subroutine game_of_life()},
+for every update operation performed on an element of
+\lstinline[language=Fortran]{grid(:, :)}, 4 to 8 access operations are
+performed.
+
 \subsection{Parallel Loop Code}
 \label{sec:parallel-loop-code}
 
@@ -346,12 +392,22 @@ The entire parallel loop code,
 \lstinline[style=ff]{src/02_gol_cpu_openmp_loop_fort.f90}, can be found in
 \autoref{sec:02_gol_cpu_openmp_loop_fort}.
 It is derived from \lstinline[style=ff]{src/02_gol_cpu_serial_fort.f90} but with
-modifications to
+modifications to incorporate parallelism.
 
 The OpenMP worksharing construct, \lstinline[language=Fortran]{parallel do}, has
 been introduced to parallelise the segments of the GOL simulation code which can
 be parallelised to yield performance improvements.
-From the profiling analysis, discussed in \autoref{sec:profiling-comparison},
+From the profiling analysis, discussed in \autoref{sec:profiling-comparison}, it
+was observed that the majority of time is spent accessing elements the variable
+\lstinline[language=Fortran]{grid(:, :)}.
+Hence, the segments of code which are likely to result in the best performance
+improvements when parallelised, are those that involve access operations on
+\lstinline[language=Fortran]{grid(:, :)}; namely, the nested loops over
+\lstinline[language=Fortran]{grid(i, j)} in
+\lstinline[language=Fortran]{subroutine game_of_life()} and
+\lstinline[language=Fortran]{subroutine game_of_life_stats()}.
+
+The parallelised code snippets are shown below.
 
 \lstinputlisting[
 language=Fortran
@@ -366,7 +422,7 @@ language=Fortran
 
 \lstinputlisting[
 language=Fortran
-, linerange={213-235}
+, linerange={213-239}
 , firstnumber=213
 , caption={Inclusion of OMP parallel \lstinline{do} worksharing constructs
   within \lstinline{subroutine game_of_life_stats()}.}
@@ -375,9 +431,40 @@ language=Fortran
   ../src/02_gol_cpu_openmp_loop_fort.f90
 }
 
+Static schedulers were chosen for the \lstinline[language=Fortran]{parallel do}
+loops, as the amount of work per iteration (of either loop) is expected to be
+approximately constant.
+Thus, any benefit from introducing a dynamic or guided scheduler would be
+minimal and outweighed by the cost of introducing scheduler overhead.
+A reduction clause is attached to the variable
+\lstinline[language=Fortran]{num_in_state(:)}, since it is effectively an
+indexed counter which can aggregate the results of each thread together without
+concern.
+
+It was determined in some small scale tests that including the clause
+\lstinline{collapse(2)}, which would collapse the two perfectly-nested loops
+into one, generally did not produce a significant performance benefit and in
+some cases worsened performance.
+However this was only tested rudimentarily and may be more signficant for
+increasingly large grid sizes.
 
 \subsection{Bash Scripts}
 \label{sec:bash-scripts}
+
+\subsubsection{GOL Job Submission}
+\label{sec:gol-job}
+
+The entire GOL job submission SLURM script,
+\lstinline[style=ff]{gol-job-submission.slurm}, can be found in
+\autoref{sec:gol-job-submission}.
+
+\subsubsection{GOL Job Set}
+\label{sec:gol-job-set}
+
+\subsubsection{GOL Data Extract}
+\label{sec:gol-data}
+
+
 
 \newpage
 \section{Results}
@@ -395,11 +482,12 @@ comparing the statistics of the grids produced.
 
 To compare the ASCII visualisations for each version, using the \lstinline{diff}
 command to compare the \lstinline[style=ff]{output/*ngrid-10x10*/log.txt} output
-for each version from that of
+for each version from that of \\
 \lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90} should indicate any
 differences in behaviour.
 If each version produces identical grids, the only differences should be timing
 results.
+
 \begin{lstlisting}[language=Bash]
   original="output/GOL-01_gol_cpu_serial_fort.nomp-4.ngrid-10x10.nsteps-10.\
   ic_type-0.vis_type-0.rule_type-0.nghbr_type-0.bndry_type-0/log.txt"
@@ -413,6 +501,7 @@ Similarly, to compare the statistics, we again use the \lstinline{diff} command
 to compare the \lstinline[style=ff]{output/*ngrid-10x10*/stats.txt} output
 for each version from that of
 \lstinline[style=ff]{src/01_gol_cpu_serial_fort.f90}.
+
 \begin{lstlisting}[language=Bash]
   original="output/GOL-01_gol_cpu_serial_fort.nomp-4.ngrid-10x10.nsteps-10.\
   ic_type-0.vis_type-0.rule_type-0.nghbr_type-0.bndry_type-0/stats.txt"
