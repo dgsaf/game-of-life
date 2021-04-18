@@ -575,21 +575,21 @@ improvements in total elapsed time.
       ]
 
       \addplot [
-      color = black!0!red
+      color = red!0!black
       , mark = diamond*
       ] table [col sep = comma]
       {../data/scaling/01_gol_cpu_serial_fort.csv};
       \addlegendentry{Original Serial}
 
       \addplot [
-      color = black!50!red
+      color = red!50!black
       , mark = diamond*
       ] table [col sep = comma]
       {../data/scaling/02_gol_cpu_serial_fort.csv};
       \addlegendentry{Improved Serial}
 
       \addplot [
-      color = black!100!red
+      color = red!100!black
       , mark = diamond*
       ] table [col sep = comma]
       {../data/scaling/02_gol_cpu_openmp_loop_fort.csv};
@@ -659,13 +659,27 @@ The time taken for the parallel loop code to complete the simulation was
 extracted for each number of OMP threads used, and for each grid size, with the
 results presented in \autoref{fig:parallel_scaling}.
 
+It can be seen that for smaller grid sizes the parallel code is faster with
+a smaller number of OMP threads.
+However, when a grid size of approximately $2^{10} \cross 2^{10}$ is reached,
+the performance increases with the number of threads used.
+This behaviour is to be expected due to the memory overhead associated with
+spawning, destroying and managing threads - that the cost of this overhead is
+more significant than any parallelisation gains for smaller grids, but for
+larger grids it pays increasing dividends.
+
+It should be noted that the parallel code runs for at most \SI{1}{\second} until
+a grid size of $2^{9} \cross 2^{9}$ is reached; hence any performance benefit
+from using a small number of threads is negligble, while the performance benefit
+from using a large number of threads for larger grid sizes is rather
+substantial.
 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
     \begin{axis}[
       use units
-      , scale = 1.5
+      , scale = 1.8
       , title = {Scaling performance of Parallel GOL Simulations for varying OMP
         Threads}
       , grid = major
@@ -679,7 +693,8 @@ results presented in \autoref{fig:parallel_scaling}.
       , legend entries
       , legend style = {
         cells = {anchor=east}
-        , legend pos = outer north east
+        , legend pos = north west
+        , font = \tiny
       }
       , xmin = 2
       , xmax = 16384
@@ -711,7 +726,7 @@ results presented in \autoref{fig:parallel_scaling}.
   \label{fig:parallel_scaling}
 \end{figure}
 
-\newpage
+\clearpage
 \appendix
 \section{Appendix}
 \label{sec:appendix}
